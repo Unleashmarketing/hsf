@@ -12,19 +12,21 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #1a365d;
+            color: #1d1d1f;
             background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
-        /* Custom Icons */
+        /* Custom Icons - Simplified Apple Style */
         .icon {
             display: inline-block;
             width: 24px;
@@ -35,55 +37,40 @@
         .icon-medical::before {
             content: '';
             position: absolute;
-            width: 24px;
-            height: 4px;
+            width: 20px;
+            height: 3px;
             background: currentColor;
             top: 10px;
-            left: 0;
+            left: 2px;
+            border-radius: 2px;
         }
 
         .icon-medical::after {
             content: '';
             position: absolute;
-            width: 4px;
-            height: 24px;
+            width: 3px;
+            height: 20px;
             background: currentColor;
-            top: 0;
+            top: 2px;
             left: 10px;
-        }
-
-        .icon-target {
-            border: 3px solid currentColor;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .icon-target::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: currentColor;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            border-radius: 2px;
         }
 
         .icon-document {
             border: 2px solid currentColor;
-            border-radius: 2px;
+            border-radius: 3px;
             position: relative;
         }
 
         .icon-document::before {
             content: '';
             position: absolute;
-            width: 12px;
+            width: 10px;
             height: 2px;
             background: currentColor;
-            top: 6px;
+            top: 5px;
             left: 4px;
+            border-radius: 1px;
         }
 
         .icon-document::after {
@@ -92,8 +79,9 @@
             width: 8px;
             height: 2px;
             background: currentColor;
-            top: 12px;
+            top: 10px;
             left: 4px;
+            border-radius: 1px;
         }
 
         .icon-language {
@@ -105,11 +93,11 @@
         .icon-language::before {
             content: '';
             position: absolute;
-            width: 20px;
+            width: 16px;
             height: 1px;
             background: currentColor;
             top: 50%;
-            left: 2px;
+            left: 3px;
             transform: translateY(-50%);
         }
 
@@ -117,9 +105,9 @@
             content: '';
             position: absolute;
             width: 1px;
-            height: 20px;
+            height: 16px;
             background: currentColor;
-            top: 2px;
+            top: 3px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -127,28 +115,28 @@
         .icon-home {
             width: 0;
             height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 12px solid currentColor;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid currentColor;
             position: relative;
         }
 
         .icon-home::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 10px;
+            width: 10px;
+            height: 8px;
             background: currentColor;
-            bottom: -22px;
-            left: -6px;
+            bottom: -18px;
+            left: -5px;
         }
 
         .icon-plane {
             width: 0;
             height: 0;
-            border-left: 8px solid transparent;
-            border-right: 16px solid transparent;
-            border-bottom: 6px solid currentColor;
+            border-left: 6px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 5px solid currentColor;
             position: relative;
             transform: rotate(-45deg);
         }
@@ -156,49 +144,50 @@
         .icon-handshake::before {
             content: '';
             position: absolute;
-            width: 16px;
-            height: 8px;
+            width: 12px;
+            height: 6px;
             border: 2px solid currentColor;
-            border-radius: 20px 20px 0 0;
+            border-radius: 12px 12px 0 0;
             top: 8px;
-            left: 0;
+            left: 2px;
         }
 
         .icon-handshake::after {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 16px;
+            width: 6px;
+            height: 12px;
             border: 2px solid currentColor;
-            border-radius: 0 20px 20px 0;
-            top: 0;
-            right: 0;
+            border-radius: 0 12px 12px 0;
+            top: 2px;
+            right: 2px;
         }
 
         .icon-phone::before {
             content: '';
             position: absolute;
-            width: 16px;
-            height: 20px;
+            width: 14px;
+            height: 18px;
             border: 2px solid currentColor;
             border-radius: 4px;
-            top: 2px;
-            left: 4px;
+            top: 3px;
+            left: 5px;
         }
 
         .icon-phone::after {
             content: '';
             position: absolute;
-            width: 8px;
+            width: 6px;
             height: 2px;
             background: currentColor;
-            top: 18px;
-            left: 8px;
+            top: 17px;
+            left: 9px;
+            border-radius: 1px;
         }
 
         .icon-email {
-            width: 20px;
-            height: 14px;
+            width: 18px;
+            height: 12px;
             border: 2px solid currentColor;
             border-radius: 2px;
             position: relative;
@@ -209,11 +198,11 @@
             position: absolute;
             width: 0;
             height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 6px solid currentColor;
-            top: 0;
-            left: 2px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 4px solid currentColor;
+            top: 1px;
+            left: 3px;
         }
 
         .icon-clock {
@@ -226,9 +215,9 @@
             content: '';
             position: absolute;
             width: 1px;
-            height: 8px;
+            height: 6px;
             background: currentColor;
-            top: 2px;
+            top: 3px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -236,7 +225,7 @@
         .icon-clock::after {
             content: '';
             position: absolute;
-            width: 6px;
+            width: 4px;
             height: 1px;
             background: currentColor;
             top: 50%;
@@ -244,11 +233,11 @@
             transform: translateY(-50%);
         }
 
-        /* Header */
+        /* Header - Apple Style */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             position: fixed;
             width: 100%;
             top: 0;
@@ -260,50 +249,69 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
-            height: 60px;
+            padding: 12px 0;
+            height: 54px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
         }
 
         .logo .icon-medical {
-            color: #3182ce;
-            width: 28px;
-            height: 28px;
+            color: #007aff;
+            width: 24px;
+            height: 24px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #4a5568;
+            color: #1d1d1f;
             text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
+            font-weight: 400;
+            font-size: 17px;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+            letter-spacing: -0.01em;
         }
 
         .nav-links a:hover {
-            background: #ebf8ff;
-            color: #3182ce;
+            color: #007aff;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 140px 0 100px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .nav-cta {
+            background: #007aff;
             color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #0051d0;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section - Apple Style */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -315,67 +323,62 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="medical" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M20,10 L20,30 M10,20 L30,20" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></pattern></defs><rect width="100" height="100" fill="url(%23medical)"/></svg>');
-            opacity: 0.3;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
+        .hero h1 {
+            font-size: 56px;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            margin-bottom: 24px;
+            line-height: 1.07;
+            letter-spacing: -0.015em;
         }
 
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            font-weight: 300;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 48px;
+            opacity: 0.9;
+            line-height: 1.33;
+            letter-spacing: -0.01em;
         }
 
         .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 56px 0;
         }
 
         .hero-stat {
             text-align: center;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
         }
 
         .hero-stat h3 {
-            font-size: 1.8rem;
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
 
         .hero-stat p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            font-size: 17px;
+            opacity: 0.8;
+            font-weight: 400;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 16px;
             justify-content: center;
-            margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -383,463 +386,352 @@
             align-items: center;
             gap: 8px;
             padding: 16px 32px;
-            border-radius: 8px;
+            border-radius: 28px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 500;
+            font-size: 17px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: none;
+            cursor: pointer;
+            letter-spacing: -0.01em;
         }
 
         .btn-primary {
-            background: #e53e3e;
-            color: white;
-            box-shadow: 0 4px 14px 0 rgba(229, 62, 62, 0.4);
+            background: white;
+            color: #007aff;
         }
 
         .btn-primary:hover {
-            background: #c53030;
+            background: rgba(255,255,255,0.9);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255,255,255,0.15);
             color: white;
-            border: 2px solid white;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: #667eea;
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
         }
 
-        .hero-visual {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 2rem;
-            border-radius: 16px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .medical-icon-large {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-        }
-
-        .medical-icon-large .icon-medical {
-            width: 60px;
-            height: 60px;
-            color: white;
-        }
-
-        .hero-visual h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .hero-visual p {
-            font-size: 1rem;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        /* Sections */
+        /* Sections - Apple Style */
         .section {
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
-        .section-gray {
-            background: #f7fafc;
-        }
-
-        .section-blue {
-            background: #3182ce;
-            color: white;
+        .section-light {
+            background: #f5f5f7;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: 48px;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .section-blue .section-header h2 {
-            color: white;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.015em;
+            line-height: 1.08;
         }
 
         .section-header p {
-            font-size: 1.2rem;
-            color: #718096;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 21px;
+            color: #6e6e73;
+            line-height: 1.38;
+            letter-spacing: -0.01em;
+            font-weight: 400;
         }
 
-        .section-blue .section-header p {
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* Features */
+        /* Features Grid - Apple Style */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
         }
 
         .feature-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+            padding: 48px 32px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             transition: all 0.3s ease;
-            position: relative;
+            text-align: center;
         }
 
         .feature-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: #3182ce;
-            border-radius: 12px 12px 0 0;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: #3182ce;
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 24px;
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 24px;
             font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 1rem;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
         }
 
         .feature-card p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: #6e6e73;
+            line-height: 1.47;
+            margin-bottom: 24px;
+            font-size: 17px;
         }
 
         .feature-list {
             list-style: none;
-            margin-top: 1rem;
+            text-align: left;
         }
 
         .feature-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 8px 0;
+            padding-left: 24px;
             position: relative;
-            color: #4a5568;
+            color: #6e6e73;
+            font-size: 15px;
         }
 
         .feature-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #38a169;
-            font-weight: bold;
+            color: #34c759;
+            font-weight: 600;
         }
 
-        /* Specializations */
+        /* Specializations - Apple Style */
         .specializations {
-            padding: 100px 0;
-            background: #f8fafc;
-            color: #2d3748;
-        }
-
-        .specializations .section-header h2 {
-            color: #2d3748;
-        }
-
-        .specializations .section-header p {
-            color: #4a5568;
+            padding: 120px 0;
+            background: white;
         }
 
         .specializations-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            margin-top: 50px;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            margin-top: 80px;
             align-items: start;
         }
 
         .specializations-info {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: #f5f5f7;
+            padding: 48px;
+            border-radius: 18px;
+            position: sticky;
+            top: 120px;
         }
 
         .specializations-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #2d3748;
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
         }
 
         .specializations-info p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            color: #4a5568;
+            margin-bottom: 24px;
+            line-height: 1.47;
+            color: #6e6e73;
+            font-size: 17px;
         }
 
         .specializations-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 16px;
+            margin-top: 32px;
         }
 
         .spec-stat {
             text-align: center;
-            padding: 1rem;
-            background: #f7fafc;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .spec-stat h4 {
-            font-size: 1.5rem;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #e53e3e;
+            margin-bottom: 8px;
+            color: #007aff;
+            letter-spacing: -0.01em;
         }
 
         .spec-stat p {
-            font-size: 0.9rem;
-            color: #4a5568;
+            font-size: 15px;
+            color: #6e6e73;
+            font-weight: 400;
         }
 
         .specializations-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 16px;
         }
 
         .spec-item {
             background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #3182ce;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .spec-item:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
 
         .spec-item h4 {
-            font-size: 1.1rem;
+            font-size: 19px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
         }
 
         .spec-item p {
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.4;
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.47;
         }
 
-        /* Process */
+        /* Process - Apple Style */
         .process {
-            padding: 100px 0;
-            background: white;
+            padding: 120px 0;
+            background: #f5f5f7;
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+            margin-top: 80px;
         }
 
         .process-step {
-            background: #f7fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            background: white;
+            padding: 48px 32px;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
             position: relative;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .process-step:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .step-number {
             position: absolute;
-            top: -15px;
-            left: 2rem;
+            top: -20px;
+            left: 32px;
             width: 40px;
             height: 40px;
-            background: #e53e3e;
+            background: linear-gradient(135deg, #007aff, #5856d6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+            font-weight: 600;
+            font-size: 17px;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
         }
 
         .process-step h3 {
-            font-size: 1.3rem;
+            font-size: 24px;
             font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 1rem;
-            margin-top: 0.5rem;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            margin-top: 8px;
+            letter-spacing: -0.01em;
         }
 
         .process-step p {
-            color: #4a5568;
-            line-height: 1.6;
+            color: #6e6e73;
+            line-height: 1.47;
+            font-size: 17px;
         }
 
-        /* Requirements */
-        .requirements {
-            padding: 80px 0;
-            background: #f7fafc;
-        }
-
-        .requirements-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 50px;
-        }
-
-        .requirements-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid #3182ce;
-        }
-
-        .requirements-card.for-facilities {
-            border-top-color: #e53e3e;
-        }
-
-        .requirements-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 1.5rem;
-        }
-
-        .requirement-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .requirement-item:last-child {
-            border-bottom: none;
-        }
-
-        .requirement-item h4 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-        }
-
-        .requirement-item p {
-            color: #718096;
-            font-size: 0.95rem;
-        }
-
-        /* Success Stories */
+        /* Success Stories - Apple Style */
         .success-stories {
-            padding: 100px 0;
-            background: #edf2f7;
-            color: #2d3748;
-        }
-
-        .success-stories .section-header h2 {
-            color: #2d3748;
-        }
-
-        .success-stories .section-header p {
-            color: #4a5568;
+            padding: 120px 0;
+            background: white;
         }
 
         .stories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 80px;
         }
 
         .story-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: #f5f5f7;
+            padding: 48px 32px;
+            border-radius: 18px;
             transition: all 0.3s ease;
         }
 
         .story-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
         }
 
         .story-quote {
-            font-size: 1.1rem;
+            font-size: 19px;
             font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            color: #4a5568;
+            margin-bottom: 32px;
+            line-height: 1.42;
+            color: #1d1d1f;
+            font-weight: 400;
         }
 
         .story-author h4 {
             font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: #2d3748;
+            margin-bottom: 4px;
+            color: #1d1d1f;
+            font-size: 17px;
         }
 
         .story-author p {
-            color: #718096;
-            font-size: 0.9rem;
+            color: #6e6e73;
+            font-size: 15px;
         }
 
-        /* Contact */
+        /* Contact - Apple Style */
         .contact {
-            padding: 100px 0;
-            background: #2d3748;
+            padding: 120px 0;
+            background: #1d1d1f;
             color: white;
         }
 
@@ -848,80 +740,106 @@
         }
 
         .contact .section-header p {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.8);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 50px;
+            gap: 80px;
+            margin-top: 80px;
         }
 
         .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #e2e8f0;
+            font-size: 32px;
+            margin-bottom: 32px;
+            color: white;
+            font-weight: 600;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding: 24px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-icon {
             width: 40px;
             height: 40px;
-            background: #3182ce;
-            border-radius: 8px;
+            background: #007aff;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: white;
         }
 
         .contact-item a {
-            color: #e2e8f0;
+            color: #007aff;
             text-decoration: none;
             font-weight: 500;
         }
 
         .contact-item a:hover {
-            color: white;
+            color: #66b3ff;
+        }
+
+        .contact-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+            line-height: 1.47;
         }
 
         .contact-form {
             background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 48px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 32px;
+            color: white;
+            font-weight: 600;
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             font-weight: 500;
+            color: white;
+            font-size: 15px;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px;
+            padding: 16px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
-            font-size: 1rem;
+            font-size: 17px;
+            font-family: inherit;
         }
 
         .form-group input::placeholder,
@@ -929,41 +847,47 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Footer */
+        /* Footer - Apple Style */
         footer {
-            background: #1a202c;
-            color: #a0aec0;
-            padding: 3rem 0 2rem;
+            background: #f5f5f7;
+            color: #6e6e73;
+            padding: 80px 0 40px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 48px;
+            margin-bottom: 48px;
         }
 
         .footer-section h3 {
-            color: white;
-            margin-bottom: 1rem;
+            color: #1d1d1f;
+            margin-bottom: 16px;
             font-weight: 600;
+            font-size: 19px;
         }
 
         .footer-section p,
         .footer-section a {
-            color: #a0aec0;
+            color: #6e6e73;
             text-decoration: none;
-            line-height: 1.6;
+            line-height: 1.47;
+            font-size: 15px;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .footer-section a:hover {
-            color: white;
+            color: #007aff;
         }
 
         .footer-bottom {
-            border-top: 1px solid #2d3748;
-            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 32px;
             text-align: center;
+            color: #86868b;
+            font-size: 13px;
         }
 
         /* Mobile Responsive */
@@ -972,17 +896,21 @@
                 display: none;
             }
 
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .hero h1 {
+                font-size: 40px;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .hero .subtitle {
+                font-size: 21px;
             }
 
             .hero-stats {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
             }
 
             .features-grid {
@@ -991,18 +919,21 @@
 
             .specializations-content {
                 grid-template-columns: 1fr;
-            }
-
-            .requirements-content {
-                grid-template-columns: 1fr;
+                gap: 48px;
             }
 
             .contact-content {
                 grid-template-columns: 1fr;
+                gap: 48px;
             }
 
             .process-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -1023,9 +954,9 @@
             animation: fadeInUp 0.8s ease forwards;
         }
 
-        .fade-in-delay-1 { animation-delay: 0.1s; }
-        .fade-in-delay-2 { animation-delay: 0.2s; }
-        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -1041,8 +972,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#specializations">Expertise</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#requirements">Requirements</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -1051,71 +981,61 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="fade-in">Your Next Step for Your Medical Career</h1>
-                    <p class="subtitle fade-in fade-in-delay-1">Connecting qualified healthcare professionals from Brazil with leading German healthcare institutions through comprehensive support and expertise.</p>
+                <h1 class="fade-in">Your Medical Career in Germany</h1>
+                <p class="subtitle fade-in fade-in-delay-1">Connecting qualified healthcare professionals from Brazil with leading German medical institutions.</p>
+                
+                <div class="hero-stats fade-in fade-in-delay-2">
+                    <div class="hero-stat">
+                        <h3>500+</h3>
+                        <p>Professionals Placed</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>95%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>150+</h3>
+                        <p>Partner Clinics</p>
+                    </div>
+                </div>
 
-                    <div class="cta-buttons fade-in fade-in-delay-2">
-                        <a href="#contact" class="btn btn-primary">I'm a Healthcare Professional</a>
-                        <a href="#contact" class="btn btn-secondary">I Need Medical Staff</a>
-                    </div>
-                    
-                    <div class="hero-stats fade-in fade-in-delay-3">
-                        <div class="hero-stat">
-                            <h3>500+</h3>
-                            <p>Professionals Placed</p>
-                        </div>
-                        <div class="hero-stat">
-                            <h3>150+</h3>
-                            <p>Partner Clinics</p>
-                        </div>
-                        <div class="hero-stat">
-                            <h3>95%</h3>
-                            <p>Success Rate</p>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual fade-in fade-in-delay-3">
-                        <div class="medical-icon-large">
-                            <div class="icon icon-medical"></div>
-                        </div>
-                        <h3>Professional Medical Staffing</h3>
-                        <p>Specialized recruitment with full integration support from application to career success in Germany.</p>
-                    </div>
+                <div class="cta-buttons fade-in fade-in-delay-3">
+                    <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+                    <a href="#services" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features -->
-    <section id="services" class="section section-gray">
+    <section id="services" class="section section-light">
         <div class="container">
             <div class="section-header">
-                <h2>Comprehensive Healthcare Staffing Solutions</h2>
-                <p>We provide end-to-end support for healthcare professionals and medical institutions, ensuring successful placements and long-term career growth.</p>
+                <h2>Everything You Need</h2>
+                <p>Comprehensive support for healthcare professionals and medical institutions throughout the entire journey.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-document"></div>
                     </div>
-                    <h3>Complete Legal & Administrative Support</h3>
-                    <p>We handle all bureaucratic processes, ensuring smooth transition and full compliance with German healthcare regulations and requirements.</p>
+                    <h3>Legal & Administrative</h3>
+                    <p>Complete bureaucratic support ensuring smooth transition and full compliance with German healthcare regulations.</p>
                     <ul class="feature-list">
                         <li>Visa and work permit processing</li>
-                        <li>Medical qualification recognition (Approbation)</li>
+                        <li>Medical qualification recognition</li>
                         <li>Professional registration assistance</li>
-                        <li>Insurance and tax setup guidance</li>
+                        <li>Insurance and tax setup</li>
                     </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-language"></div>
                     </div>
-                    <h3>German Language & Medical Training</h3>
-                    <p>Comprehensive language preparation with focus on medical German terminology and communication skills essential for healthcare practice.</p>
+                    <h3>Language & Training</h3>
+                    <p>Specialized German language preparation focused on medical terminology and healthcare communication.</p>
                     <ul class="feature-list">
-                        <li>B2/C1 level German language courses</li>
+                        <li>B2/C1 level German courses</li>
                         <li>Medical terminology training</li>
                         <li>Patient communication workshops</li>
                         <li>Cultural integration seminars</li>
@@ -1125,11 +1045,11 @@
                     <div class="feature-icon">
                         <div class="icon icon-home"></div>
                     </div>
-                    <h3>Relocation & Integration Services</h3>
-                    <p>Complete support for your move to Germany, from housing assistance to social integration, ensuring a smooth transition to your new life.</p>
+                    <h3>Relocation & Integration</h3>
+                    <p>Complete support for your move to Germany, ensuring smooth transition to your new life.</p>
                     <ul class="feature-list">
                         <li>Housing search and accommodation</li>
-                        <li>Bank account and registration support</li>
+                        <li>Bank account setup</li>
                         <li>Local community integration</li>
                         <li>Family support services</li>
                     </ul>
@@ -1138,12 +1058,12 @@
                     <div class="feature-icon">
                         <div class="icon icon-plane"></div>
                     </div>
-                    <h3>Travel & Logistics Coordination</h3>
-                    <p>We organize all aspects of your relocation, from flight arrangements to airport pickup and initial settlement support.</p>
+                    <h3>Travel & Logistics</h3>
+                    <p>Organized relocation from flight arrangements to settlement support.</p>
                     <ul class="feature-list">
-                        <li>Flight booking and coordination</li>
+                        <li>Flight booking coordination</li>
                         <li>Airport pickup service</li>
-                        <li>Temporary accommodation arrangements</li>
+                        <li>Temporary accommodation</li>
                         <li>Local orientation tours</li>
                     </ul>
                 </div>
@@ -1151,26 +1071,13 @@
                     <div class="feature-icon">
                         <div class="icon icon-handshake"></div>
                     </div>
-                    <h3>Ongoing Career Support</h3>
-                    <p>Our relationship doesn't end at placement. We provide continuous support for your career development and professional growth in Germany.</p>
+                    <h3>Career Support</h3>
+                    <p>Continuous support for career development and professional growth in Germany.</p>
                     <ul class="feature-list">
-                        <li>Regular check-ins and support</li>
+                        <li>Regular check-ins</li>
                         <li>Career advancement opportunities</li>
                         <li>Professional network building</li>
                         <li>Continuing education guidance</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <div class="icon icon-target"></div>
-                    </div>
-                    <h3>Specialized Medical Placement</h3>
-                    <p>Our expert team matches healthcare professionals with positions that perfectly align with their medical specializations, experience level, and career goals.</p>
-                    <ul class="feature-list">
-                        <li>Detailed skill and qualification assessment</li>
-                        <li>Specialty-specific placement matching</li>
-                        <li>Career progression planning</li>
-                        <li>Ongoing professional development support</li>
                     </ul>
                 </div>
             </div>
@@ -1181,14 +1088,14 @@
     <section id="specializations" class="specializations">
         <div class="container">
             <div class="section-header">
-                <h2>Medical Expertise & Specializations</h2>
-                <p>We recruit across all major medical disciplines and healthcare positions throughout Germany's healthcare system</p>
+                <h2>Medical Specializations</h2>
+                <p>Expert recruitment across all major medical disciplines throughout Germany's healthcare system.</p>
             </div>
             <div class="specializations-content">
                 <div class="specializations-info">
-                    <h3>Our Medical Recruitment Expertise</h3>
-                    <p>With over 8 years of experience in healthcare recruitment, we understand the specific requirements and challenges of placing medical professionals in the German healthcare system.</p>
-                    <p>Our team consists of medical recruitment specialists who work closely with leading hospitals, clinics, and healthcare facilities across Germany to ensure optimal placement matches.</p>
+                    <h3>Our Expertise</h3>
+                    <p>With over 8 years of experience in healthcare recruitment, we understand the specific requirements of placing medical professionals in Germany.</p>
+                    <p>Our team works closely with leading hospitals and healthcare facilities to ensure optimal placement matches.</p>
                     <div class="specializations-stats">
                         <div class="spec-stat">
                             <h4>25+</h4>
@@ -1219,7 +1126,7 @@
                     </div>
                     <div class="spec-item">
                         <h4>Emergency Medicine</h4>
-                        <p>Emergency physicians, intensive care specialists, trauma specialists</p>
+                        <p>Emergency physicians, intensive care specialists, trauma medicine</p>
                     </div>
                     <div class="spec-item">
                         <h4>Cardiology</h4>
@@ -1234,7 +1141,7 @@
                         <p>General pediatrics, neonatology, pediatric intensive care</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Nursing Specialties</h4>
+                        <h4>Nursing</h4>
                         <p>ICU nursing, surgical nursing, pediatric nursing, geriatric care</p>
                     </div>
                     <div class="spec-item">
@@ -1249,14 +1156,6 @@
                         <h4>Psychiatry</h4>
                         <p>Adult psychiatry, child psychiatry, forensic psychiatry</p>
                     </div>
-                    <div class="spec-item">
-                        <h4>Gynecology</h4>
-                        <p>Obstetrics, gynecologic oncology, reproductive medicine</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Geriatric Medicine</h4>
-                        <p>Geriatric care, dementia care, palliative medicine</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1266,97 +1165,39 @@
     <section id="process" class="process">
         <div class="container">
             <div class="section-header">
-                <h2>Your Professional Journey to Germany</h2>
-                <p>Our structured 6-step process ensures successful placement and seamless integration into the German healthcare system</p>
+                <h2>Your Journey to Germany</h2>
+                <p>Our structured 6-step process ensures successful placement and seamless integration.</p>
             </div>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Application & Document Review</h3>
-                    <p>Submit your complete medical qualifications, work experience, and career preferences. Our team conducts a thorough evaluation of your professional background and assesses compatibility with German healthcare standards and requirements.</p>
+                    <h3>Application Review</h3>
+                    <p>Submit your medical qualifications and career preferences. We conduct thorough evaluation and assess compatibility with German standards.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Professional Assessment & Interviews</h3>
-                    <p>Participate in comprehensive interviews conducted in Portuguese, English, and basic German. We evaluate your medical knowledge, communication skills, and cultural adaptability for the German healthcare environment.</p>
+                    <h3>Professional Assessment</h3>
+                    <p>Comprehensive interviews in Portuguese, English, and German. We evaluate medical knowledge and cultural adaptability.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>German Language Certification</h3>
-                    <p>Complete intensive German language training to achieve B2/C1 level certification. Our specialized program focuses on medical terminology, patient communication, and healthcare documentation essential for German medical practice.</p>
+                    <h3>Language Certification</h3>
+                    <p>Intensive German training to achieve B2/C1 certification with focus on medical terminology and patient communication.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Medical License Recognition</h3>
-                    <p>We guide you through the Approbation process - the official recognition of your medical qualifications by German authorities. This includes document preparation, submission to medical boards, and examination preparation if required.</p>
+                    <h3>License Recognition</h3>
+                    <p>Guidance through the Approbation process - official recognition of medical qualifications by German authorities.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
-                    <h3>Job Placement & Contract Negotiation</h3>
-                    <p>Once language and legal requirements are fulfilled, we match you with suitable healthcare institutions based on your specialty, location preferences, and career goals. We facilitate interviews and assist with contract negotiations.</p>
+                    <h3>Job Placement</h3>
+                    <p>Matching with healthcare institutions based on specialty and preferences. Interview facilitation and contract negotiation.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">6</div>
-                    <h3>Relocation & Professional Integration</h3>
-                    <p>Complete relocation support including flight arrangements, airport pickup, accommodation setup, and comprehensive workplace orientation. Our team ensures smooth transition and provides ongoing support during your first months in Germany.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirements -->
-    <section id="requirements" class="requirements">
-        <div class="container">
-            <div class="section-header">
-                <h2>Requirements & Qualifications</h2>
-                <p>Clear requirements for healthcare professionals and comprehensive services for medical institutions</p>
-            </div>
-            <div class="requirements-content">
-                <div class="requirements-card">
-                    <h3>For Healthcare Professionals</h3>
-                    <div class="requirement-item">
-                        <h4>Educational Background</h4>
-                        <p>Medical degree from recognized Brazilian institution, valid medical license (CRM), minimum 2 years of clinical experience in your specialty</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Language Requirements</h4>
-                        <p>Commitment to achieve B2/C1 German language certification with specialized focus on medical terminology and patient communication</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Professional Commitment</h4>
-                        <p>Minimum 2-year employment contract commitment, flexibility to work in different German states, cultural adaptability</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Required Documentation</h4>
-                        <p>Complete CV, certified diploma copies, medical license, criminal background check, health certificate, passport copies</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Additional Qualifications</h4>
-                        <p>Specialized training certificates, research publications, continuing education records (advantageous but not mandatory)</p>
-                    </div>
-                </div>
-                <div class="requirements-card for-facilities">
-                    <h3>For Healthcare Institutions</h3>
-                    <div class="requirement-item">
-                        <h4>Pre-Qualified Candidates</h4>
-                        <p>Access to thoroughly vetted healthcare professionals with verified qualifications, language skills, and cultural preparation</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Quality Assurance Process</h4>
-                        <p>All candidates undergo rigorous medical evaluation, language certification, background checks, and cultural integration training</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Comprehensive Integration Support</h4>
-                        <p>Ongoing support for both institution and healthcare professional during the adaptation and integration period</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Partnership Benefits</h4>
-                        <p>Reduced recruitment costs, faster position filling, dedicated account management, replacement guarantee</p>
-                    </div>
-                    <div class="requirement-item">
-                        <h4>Legal Compliance</h4>
-                        <p>Full compliance with German employment law, medical licensing requirements, and healthcare regulations</p>
-                    </div>
+                    <h3>Integration Support</h3>
+                    <p>Complete relocation support including accommodation, workplace orientation, and ongoing assistance during first months.</p>
                 </div>
             </div>
         </div>
@@ -1367,34 +1208,34 @@
         <div class="container">
             <div class="section-header">
                 <h2>Success Stories</h2>
-                <p>Real experiences from healthcare professionals who successfully transitioned to Germany through our program</p>
+                <p>Real experiences from healthcare professionals who successfully transitioned to Germany.</p>
             </div>
             <div class="stories-grid">
                 <div class="story-card">
                     <div class="story-quote">
-                        "HFS transformed my career aspirations into reality. The comprehensive support from language training to professional integration was exceptional. I now work as a cardiologist at one of Munich's leading cardiac centers and couldn't be more satisfied with my decision."
+                        "HFS transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at Munich's leading cardiac center."
                     </div>
                     <div class="story-author">
                         <h4>Dr. Maria Santos</h4>
-                        <p>Interventional Cardiologist, Munich University Hospital</p>
+                        <p>Interventional Cardiologist, Munich</p>
                     </div>
                 </div>
                 <div class="story-card">
                     <div class="story-quote">
-                        "The professional guidance and personal attention I received throughout the entire process was remarkable. From visa processing to finding suitable housing, every detail was carefully managed. I'm now thriving as a pediatric nurse in Berlin."
+                        "The professional guidance throughout the entire process was remarkable. Every detail was carefully managed. I'm now thriving as a pediatric nurse in Berlin."
                     </div>
                     <div class="story-author">
                         <h4>Ana Rodriguez</h4>
-                        <p>Pediatric ICU Nurse, Charité Berlin</p>
+                        <p>Pediatric ICU Nurse, Berlin</p>
                     </div>
                 </div>
                 <div class="story-card">
                     <div class="story-quote">
-                        "As a hospital administrator, finding qualified international staff was always challenging. HFS consistently provides us with excellent healthcare professionals who are well-prepared, culturally integrated, and ready to contribute immediately to our medical team."
+                        "HFS consistently provides excellent healthcare professionals who are well-prepared and ready to contribute immediately to our medical team."
                     </div>
                     <div class="story-author">
                         <h4>Dr. Klaus Weber</h4>
-                        <p>Medical Director, Frankfurt General Hospital</p>
+                        <p>Medical Director, Frankfurt</p>
                     </div>
                 </div>
             </div>
@@ -1405,20 +1246,20 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Start Your Medical Career Journey</h2>
-                <p>Ready to advance your healthcare career in Germany? Contact our professional team for personalized consultation and guidance</p>
+                <h2>Start Your Journey</h2>
+                <p>Ready to advance your healthcare career in Germany? Contact our team for personalized consultation.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get Professional Consultation</h3>
+                    <h3>Get in Touch</h3>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <div class="icon icon-phone"></div>
                         </div>
                         <div>
-                            <h4>Direct Phone Line</h4>
+                            <h4>Phone</h4>
                             <a href="tel:+5581911163133">+55 81 9111-6313</a>
-                            <p>Speak directly with our recruitment specialists</p>
+                            <p>Speak directly with our specialists</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1426,18 +1267,9 @@
                             <div class="icon icon-email"></div>
                         </div>
                         <div>
-                            <h4>Professional Email</h4>
+                            <h4>Email</h4>
                             <a href="mailto:info@healthstaff-finders.de">info@healthstaff-finders.de</a>
-                            <p>Detailed inquiries and document submission</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <div class="icon icon-medical"></div>
-                        </div>
-                        <div>
-                            <h4>Medical Consultation</h4>
-                            <p>Schedule a free consultation to discuss your specific medical career goals and specialization requirements</p>
+                            <p>Detailed inquiries and documents</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1445,41 +1277,41 @@
                             <div class="icon icon-clock"></div>
                         </div>
                         <div>
-                            <h4>Business Hours</h4>
+                            <h4>Hours</h4>
                             <p>Monday - Friday: 9:00 AM - 6:00 PM (CET)<br>Emergency support available 24/7</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Professional Application Form</h3>
+                    <h3>Application Form</h3>
                     <form>
                         <div class="form-group">
-                            <label>Professional Category</label>
+                            <label>I am a</label>
                             <select>
-                                <option>Healthcare Professional seeking placement</option>
-                                <option>Medical Institution seeking qualified staff</option>
-                                <option>Medical Student planning future career</option>
-                                <option>Healthcare Facility Administrator</option>
+                                <option>Healthcare Professional</option>
+                                <option>Medical Institution</option>
+                                <option>Medical Student</option>
+                                <option>Healthcare Administrator</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Dr./Nurse [Your Full Name]">
+                            <input type="text" placeholder="Dr./Nurse [Your Name]">
                         </div>
                         <div class="form-group">
-                            <label>Professional Email</label>
-                            <input type="email" placeholder="your.professional.email@example.com">
+                            <label>Email</label>
+                            <input type="email" placeholder="your.email@example.com">
                         </div>
                         <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>Phone</label>
                             <input type="tel" placeholder="+55 11 99999-9999">
                         </div>
                         <div class="form-group">
-                            <label>Medical Specialty/Position</label>
-                            <input type="text" placeholder="e.g., Cardiology, Internal Medicine, ICU Nursing">
+                            <label>Specialty</label>
+                            <input type="text" placeholder="e.g., Cardiology, Nursing">
                         </div>
                         <div class="form-group">
-                            <label>Years of Experience</label>
+                            <label>Experience</label>
                             <select>
                                 <option>Less than 2 years</option>
                                 <option>2-5 years</option>
@@ -1488,9 +1320,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Current German Language Level</label>
+                            <label>German Level</label>
                             <select>
-                                <option>No German knowledge</option>
+                                <option>No German</option>
                                 <option>A1 - Beginner</option>
                                 <option>A2 - Elementary</option>
                                 <option>B1 - Intermediate</option>
@@ -1499,10 +1331,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Message & Career Goals</label>
-                            <textarea rows="4" placeholder="Tell us about your professional background, career aspirations, and any specific questions about working in Germany..."></textarea>
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Tell us about your background and career goals..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Professional Application</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
                     </form>
                 </div>
             </div>
@@ -1514,41 +1346,41 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>HFS Healthcare Staffing</h3>
-                    <p>Your trusted partner for medical career advancement in Germany. We specialize in connecting qualified Brazilian healthcare professionals with leading German medical institutions through comprehensive support and professional guidance.</p>
+                    <h3>HFS Healthcare</h3>
+                    <p>Your trusted partner for medical career advancement in Germany. Connecting Brazilian healthcare professionals with leading German institutions.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <p><a href="#services">Medical Career Placement</a></p>
-                    <p><a href="#services">Legal & Administrative Support</a></p>
-                    <p><a href="#services">German Language Training</a></p>
-                    <p><a href="#services">Professional Integration</a></p>
-                    <p><a href="#services">Relocation Services</a></p>
+                    <h3>Services</h3>
+                    <a href="#services">Career Placement</a>
+                    <a href="#services">Legal Support</a>
+                    <a href="#services">Language Training</a>
+                    <a href="#services">Integration</a>
+                    <a href="#services">Relocation</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Medical Specializations</h3>
-                    <p><a href="#specializations">Internal Medicine</a></p>
-                    <p><a href="#specializations">Surgery & Specialists</a></p>
-                    <p><a href="#specializations">Nursing Professionals</a></p>
-                    <p><a href="#specializations">Emergency Medicine</a></p>
-                    <p><a href="#specializations">Pediatrics & Family Medicine</a></p>
+                    <h3>Specializations</h3>
+                    <a href="#specializations">Internal Medicine</a>
+                    <a href="#specializations">Surgery</a>
+                    <a href="#specializations">Nursing</a>
+                    <a href="#specializations">Emergency Medicine</a>
+                    <a href="#specializations">Pediatrics</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Professional Contact</h3>
-                    <p>Phone: +55 81 9111-6313</p>
-                    <p>Email: info@healthstaff-finders.de</p>
-                    <p>Business Hours: Mon-Fri 9:00-18:00 CET</p>
-                    <p>Emergency Support: Available 24/7</p>
+                    <h3>Contact</h3>
+                    <p>+55 81 9111-6313</p>
+                    <p>info@healthstaff-finders.de</p>
+                    <p>Mon-Fri 9:00-18:00 CET</p>
+                    <p>24/7 Emergency Support</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HFS Healthcare Staffing Solutions. All rights reserved. | Professional Healthcare Recruitment | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 HFS Healthcare Staffing Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1565,29 +1397,29 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.9)';
+                header.style.backdropFilter = 'saturate(180%) blur(20px)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                header.style.background = 'rgba(255, 255, 255, 0.8)';
+                header.style.backdropFilter = 'saturate(180%) blur(20px)';
             }
         });
 
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your professional application! Our medical recruitment team will contact you within 24 hours to discuss your career opportunities in Germany.');
+            alert('Thank you for your application! Our team will contact you within 24 hours.');
         });
 
-        // Animate numbers in hero stats
+        // Animate hero stats
         function animateNumbers() {
             const stats = document.querySelectorAll('.hero-stat h3');
             stats.forEach(stat => {
                 const target = parseInt(stat.textContent);
                 const suffix = stat.textContent.includes('%') ? '%' : '+';
                 let current = 0;
-                const increment = target / 50;
+                const increment = target / 60;
                 
                 const timer = setInterval(() => {
                     current += increment;
@@ -1597,11 +1429,11 @@
                     } else {
                         stat.textContent = Math.floor(current) + suffix;
                     }
-                }, 40);
+                }, 30);
             });
         }
 
-        // Trigger animation when hero is visible
+        // Observe hero stats
         const heroObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1612,6 +1444,29 @@
         });
 
         heroObserver.observe(document.querySelector('.hero-stats'));
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .spec-item, .process-step, .story-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
