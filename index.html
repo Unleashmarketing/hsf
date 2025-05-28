@@ -260,7 +260,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
         }
 
         .logo {
@@ -321,14 +321,13 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.1;
@@ -336,9 +335,12 @@
 
         .hero-text .subtitle {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
             font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-stats {
@@ -371,6 +373,8 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
         }
 
         .btn {
@@ -409,24 +413,38 @@
         }
 
         .hero-visual {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             padding: 2rem;
             border-radius: 16px;
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .medical-icon-large {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             margin: 0 auto 1rem;
         }
 
         .medical-icon-large .icon-medical {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             color: white;
+        }
+
+        .hero-visual h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-visual p {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
         /* Sections */
@@ -551,8 +569,16 @@
         /* Specializations */
         .specializations {
             padding: 100px 0;
-            background: #2d3748;
-            color: white;
+            background: #f8fafc;
+            color: #2d3748;
+        }
+
+        .specializations .section-header h2 {
+            color: #2d3748;
+        }
+
+        .specializations .section-header p {
+            color: #4a5568;
         }
 
         .specializations-content {
@@ -564,22 +590,23 @@
         }
 
         .specializations-info {
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             padding: 2.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .specializations-info h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #e2e8f0;
+            color: #2d3748;
         }
 
         .specializations-info p {
             margin-bottom: 1.5rem;
             line-height: 1.6;
-            opacity: 0.9;
+            color: #4a5568;
         }
 
         .specializations-stats {
@@ -592,8 +619,9 @@
         .spec-stat {
             text-align: center;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: #f7fafc;
             border-radius: 8px;
+            border: 1px solid #e2e8f0;
         }
 
         .spec-stat h4 {
@@ -605,7 +633,7 @@
 
         .spec-stat p {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #4a5568;
         }
 
         .specializations-list {
@@ -615,15 +643,17 @@
         }
 
         .spec-item {
-            background: rgba(255, 255, 255, 0.08);
+            background: white;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #e53e3e;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #3182ce;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .spec-item:hover {
-            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
 
@@ -631,12 +661,12 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #e2e8f0;
+            color: #2d3748;
         }
 
         .spec-item p {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #4a5568;
             line-height: 1.4;
         }
 
@@ -753,8 +783,16 @@
         /* Success Stories */
         .success-stories {
             padding: 100px 0;
-            background: #2d3748;
-            color: white;
+            background: #edf2f7;
+            color: #2d3748;
+        }
+
+        .success-stories .section-header h2 {
+            color: #2d3748;
+        }
+
+        .success-stories .section-header p {
+            color: #4a5568;
         }
 
         .stories-grid {
@@ -765,10 +803,17 @@
         }
 
         .story-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: white;
             padding: 2rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .story-quote {
@@ -776,23 +821,33 @@
             font-style: italic;
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            color: #4a5568;
         }
 
         .story-author h4 {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            color: #2d3748;
         }
 
         .story-author p {
-            opacity: 0.8;
+            color: #718096;
             font-size: 0.9rem;
         }
 
         /* Contact */
         .contact {
             padding: 100px 0;
-            background: #1a365d;
+            background: #2d3748;
             color: white;
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact .section-header p {
+            color: rgba(255,255,255,0.9);
         }
 
         .contact-content {
@@ -998,8 +1053,13 @@
                 <div class="hero-text">
                     <h1 class="fade-in">Your Next Step for Your Medical Career</h1>
                     <p class="subtitle fade-in fade-in-delay-1">Connecting qualified healthcare professionals from Brazil with leading German healthcare institutions through comprehensive support and expertise.</p>
+
+                    <div class="cta-buttons fade-in fade-in-delay-2">
+                        <a href="#contact" class="btn btn-primary">I'm a Healthcare Professional</a>
+                        <a href="#contact" class="btn btn-secondary">I Need Medical Staff</a>
+                    </div>
                     
-                    <div class="hero-stats fade-in fade-in-delay-2">
+                    <div class="hero-stats fade-in fade-in-delay-3">
                         <div class="hero-stat">
                             <h3>500+</h3>
                             <p>Professionals Placed</p>
@@ -1014,17 +1074,13 @@
                         </div>
                     </div>
 
-                    <div class="cta-buttons fade-in fade-in-delay-3">
-                        <a href="#contact" class="btn btn-primary">I'm a Healthcare Professional</a>
-                        <a href="#contact" class="btn btn-secondary">I Need Medical Staff</a>
+                    <div class="hero-visual fade-in fade-in-delay-3">
+                        <div class="medical-icon-large">
+                            <div class="icon icon-medical"></div>
+                        </div>
+                        <h3>Professional Medical Staffing</h3>
+                        <p>Specialized recruitment with full integration support from application to career success in Germany.</p>
                     </div>
-                </div>
-                <div class="hero-visual fade-in fade-in-delay-2">
-                    <div class="medical-icon-large">
-                        <div class="icon icon-medical"></div>
-                    </div>
-                    <h3>Professional Medical Staffing</h3>
-                    <p>Specialized recruitment for healthcare professionals with full integration support from application to career success in Germany.</p>
                 </div>
             </div>
         </div>
