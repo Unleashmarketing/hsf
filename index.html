@@ -163,6 +163,27 @@
             right: 2px;
         }
 
+        .icon-shield::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 20px;
+            border: 2px solid currentColor;
+            border-radius: 8px 8px 16px 16px;
+            top: 2px;
+            left: 4px;
+        }
+
+        .icon-shield::after {
+            content: '✓';
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+            top: 7px;
+            left: 9px;
+            color: currentColor;
+        }
+
         .icon-phone::before {
             content: '';
             position: absolute;
@@ -291,19 +312,36 @@
         }
 
         .nav-cta {
-            background: #007aff;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 500;
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 22px;
+            font-weight: 600;
             font-size: 15px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
         }
 
         .nav-cta:hover {
-            background: #0051d0;
-            color: white;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
         }
 
         /* Hero Section - Apple Style */
@@ -329,7 +367,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -344,10 +382,43 @@
         .hero .subtitle {
             font-size: 24px;
             font-weight: 400;
-            margin-bottom: 48px;
-            opacity: 0.9;
-            line-height: 1.33;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.4;
             letter-spacing: -0.01em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .hero-stats {
@@ -455,7 +526,7 @@
         /* Features Grid - Apple Style */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 32px;
         }
 
@@ -525,23 +596,39 @@
         /* Specializations - Apple Style */
         .specializations {
             padding: 120px 0;
-            background: white;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            position: relative;
+        }
+
+        .specializations::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,122,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
         }
 
         .specializations-content {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 80px;
             margin-top: 80px;
             align-items: start;
+            position: relative;
+            z-index: 2;
         }
 
         .specializations-info {
-            background: #f5f5f7;
+            background: white;
             padding: 48px;
-            border-radius: 18px;
+            border-radius: 24px;
             position: sticky;
             top: 120px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .specializations-info h3 {
@@ -569,9 +656,9 @@
         .spec-stat {
             text-align: center;
             padding: 24px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, #f5f5f7, #e8e8ed);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .spec-stat h4 {
@@ -590,30 +677,50 @@
 
         .specializations-list {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .spec-item {
             background: white;
-            padding: 24px;
-            border-radius: 12px;
+            padding: 32px 24px;
+            border-radius: 20px;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #007aff, #5856d6, #af52de);
         }
 
         .spec-item:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
         }
 
         .spec-item h4 {
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: #1d1d1f;
             letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spec-item h4::before {
+            content: '🏥';
+            font-size: 18px;
         }
 
         .spec-item p {
@@ -622,49 +729,79 @@
             line-height: 1.47;
         }
 
+        .spec-item:nth-child(1) h4::before { content: '🫀'; }
+        .spec-item:nth-child(2) h4::before { content: '🔬'; }
+        .spec-item:nth-child(3) h4::before { content: '🚑'; }
+        .spec-item:nth-child(4) h4::before { content: '💓'; }
+        .spec-item:nth-child(5) h4::before { content: '🧠'; }
+        .spec-item:nth-child(6) h4::before { content: '👶'; }
+        .spec-item:nth-child(7) h4::before { content: '👩‍⚕️'; }
+        .spec-item:nth-child(8) h4::before { content: '📡'; }
+        .spec-item:nth-child(9) h4::before { content: '💉'; }
+        .spec-item:nth-child(10) h4::before { content: '🧘'; }
+
         /* Process - Apple Style */
         .process {
             padding: 120px 0;
             background: #f5f5f7;
+            position: relative;
+        }
+
+        .process-timeline {
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .process-line {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #007aff 0%, #5856d6 50%, #af52de 100%);
+            border-radius: 2px;
+            z-index: 1;
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
-            margin-top: 80px;
+            position: relative;
+            z-index: 2;
         }
 
         .process-step {
             background: white;
             padding: 48px 32px;
-            border-radius: 18px;
+            border-radius: 24px;
             border: 1px solid rgba(0, 0, 0, 0.04);
             position: relative;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         .process-step:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
 
         .step-number {
             position: absolute;
-            top: -20px;
+            top: -24px;
             left: 32px;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #007aff, #5856d6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 17px;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            border: 4px solid white;
         }
 
         .process-step h3 {
@@ -672,7 +809,7 @@
             font-weight: 600;
             color: #1d1d1f;
             margin-bottom: 16px;
-            margin-top: 8px;
+            margin-top: 12px;
             letter-spacing: -0.01em;
         }
 
@@ -680,6 +817,17 @@
             color: #6e6e73;
             line-height: 1.47;
             font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .process-duration {
+            display: inline-block;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         /* Success Stories - Apple Style */
@@ -688,23 +836,72 @@
             background: white;
         }
 
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+        .stories-container {
             margin-top: 80px;
         }
 
-        .story-card {
+        .stories-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
             background: #f5f5f7;
-            padding: 48px 32px;
-            border-radius: 18px;
+            padding: 8px;
+            border-radius: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #6e6e73;
+            cursor: pointer;
             transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #007aff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            padding: 48px 32px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 32px;
+            font-size: 80px;
+            color: rgba(0, 122, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
         }
 
         .story-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
         }
 
         .story-quote {
@@ -714,18 +911,52 @@
             line-height: 1.42;
             color: #1d1d1f;
             font-weight: 400;
+            position: relative;
+            z-index: 2;
         }
 
-        .story-author h4 {
+        .story-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .author-info h4 {
             font-weight: 600;
             margin-bottom: 4px;
             color: #1d1d1f;
             font-size: 17px;
         }
 
-        .story-author p {
+        .author-info p {
             color: #6e6e73;
             font-size: 15px;
+        }
+
+        .story-rating {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .story-rating span {
+            color: #ff9500;
+            font-size: 16px;
         }
 
         /* Contact - Apple Style */
@@ -909,6 +1140,11 @@
                 gap: 24px;
             }
 
+            .hero-features {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .section-header h2 {
                 font-size: 36px;
             }
@@ -922,6 +1158,10 @@
                 gap: 48px;
             }
 
+            .specializations-list {
+                grid-template-columns: 1fr;
+            }
+
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 48px;
@@ -931,9 +1171,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .process-line {
+                display: none;
+            }
+
             .btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .stories-tabs {
+                flex-direction: column;
+                gap: 8px;
             }
         }
 
@@ -972,7 +1221,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#specializations">Expertise</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Jetzt starten</a></li>
             </ul>
         </nav>
     </header>
@@ -981,27 +1230,34 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Your Medical Career in Germany</h1>
-                <p class="subtitle fade-in fade-in-delay-1">Connecting qualified healthcare professionals from Brazil with leading German medical institutions.</p>
+                <h1 class="fade-in">Ihre medizinische Karriere in Deutschland</h1>
+                <p class="subtitle fade-in fade-in-delay-1">Als führende Vermittlungsagentur verbinden wir seit über 8 Jahren qualifizierte Gesundheitsfachkräfte aus Brasilien mit renommierten deutschen Kliniken und Gesundheitseinrichtungen. Über 500 erfolgreiche Platzierungen sprechen für unsere Expertise in der internationalen Fachkräftevermittlung im Gesundheitswesen.</p>
                 
+                <div class="hero-features fade-in fade-in-delay-2">
+                    <div class="hero-feature">Vollständige Betreuung</div>
+                    <div class="hero-feature">Approbationsunterstützung</div>
+                    <div class="hero-feature">Deutschkurse B2/C1</div>
+                    <div class="hero-feature">Umzugsservice</div>
+                </div>
+
                 <div class="hero-stats fade-in fade-in-delay-2">
                     <div class="hero-stat">
                         <h3>500+</h3>
-                        <p>Professionals Placed</p>
+                        <p>Vermittelte Fachkräfte</p>
                     </div>
                     <div class="hero-stat">
                         <h3>95%</h3>
-                        <p>Success Rate</p>
+                        <p>Erfolgsquote</p>
                     </div>
                     <div class="hero-stat">
                         <h3>150+</h3>
-                        <p>Partner Clinics</p>
+                        <p>Partnerkliniken</p>
                     </div>
                 </div>
 
                 <div class="cta-buttons fade-in fade-in-delay-3">
-                    <a href="#contact" class="btn btn-primary">Start Your Journey</a>
-                    <a href="#services" class="btn btn-secondary">Learn More</a>
+                    <a href="#contact" class="btn btn-primary">Jetzt bewerben</a>
+                    <a href="#services" class="btn btn-secondary">Mehr erfahren</a>
                 </div>
             </div>
         </div>
@@ -1011,73 +1267,86 @@
     <section id="services" class="section section-light">
         <div class="container">
             <div class="section-header">
-                <h2>Everything You Need</h2>
-                <p>Comprehensive support for healthcare professionals and medical institutions throughout the entire journey.</p>
+                <h2>Alles aus einer Hand</h2>
+                <p>Umfassende Betreuung für Gesundheitsfachkräfte und medizinische Einrichtungen während der gesamten Vermittlung.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-document"></div>
                     </div>
-                    <h3>Legal & Administrative</h3>
-                    <p>Complete bureaucratic support ensuring smooth transition and full compliance with German healthcare regulations.</p>
+                    <h3>Rechtliche & Administrative Unterstützung</h3>
+                    <p>Komplette bürokratische Betreuung für einen reibungslosen Übergang und vollständige Compliance mit deutschen Gesundheitsvorschriften.</p>
                     <ul class="feature-list">
-                        <li>Visa and work permit processing</li>
-                        <li>Medical qualification recognition</li>
-                        <li>Professional registration assistance</li>
-                        <li>Insurance and tax setup</li>
+                        <li>Visa- und Arbeitserlaubnisverfahren</li>
+                        <li>Anerkennung medizinischer Qualifikationen</li>
+                        <li>Approbationsverfahren</li>
+                        <li>Versicherungs- und Steuerberatung</li>
                     </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-language"></div>
                     </div>
-                    <h3>Language & Training</h3>
-                    <p>Specialized German language preparation focused on medical terminology and healthcare communication.</p>
+                    <h3>Sprache & Fortbildung</h3>
+                    <p>Spezialisierte deutsche Sprachvorbereitung mit Fokus auf medizinische Terminologie und Patientenkommunikation.</p>
                     <ul class="feature-list">
-                        <li>B2/C1 level German courses</li>
-                        <li>Medical terminology training</li>
-                        <li>Patient communication workshops</li>
-                        <li>Cultural integration seminars</li>
+                        <li>B2/C1 Deutschkurse</li>
+                        <li>Medizinische Fachsprache</li>
+                        <li>Patientenkommunikation</li>
+                        <li>Kulturelle Integration</li>
                     </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-home"></div>
                     </div>
-                    <h3>Relocation & Integration</h3>
-                    <p>Complete support for your move to Germany, ensuring smooth transition to your new life.</p>
+                    <h3>Umzug & Integration</h3>
+                    <p>Komplette Unterstützung bei Ihrem Umzug nach Deutschland für einen reibungslosen Übergang in Ihr neues Leben.</p>
                     <ul class="feature-list">
-                        <li>Housing search and accommodation</li>
-                        <li>Bank account setup</li>
-                        <li>Local community integration</li>
-                        <li>Family support services</li>
+                        <li>Wohnungssuche und Unterkunft</li>
+                        <li>Bankkonto-Eröffnung</li>
+                        <li>Lokale Gemeinschaftsintegration</li>
+                        <li>Familienunterstützung</li>
                     </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-plane"></div>
                     </div>
-                    <h3>Travel & Logistics</h3>
-                    <p>Organized relocation from flight arrangements to settlement support.</p>
+                    <h3>Reise & Logistik</h3>
+                    <p>Organisierte Umzugslogistik von Flugbuchungen bis zur Eingewöhnungsunterstützung.</p>
                     <ul class="feature-list">
-                        <li>Flight booking coordination</li>
-                        <li>Airport pickup service</li>
-                        <li>Temporary accommodation</li>
-                        <li>Local orientation tours</li>
+                        <li>Flugbuchungskoordination</li>
+                        <li>Flughafenabholung</li>
+                        <li>Temporäre Unterkunft</li>
+                        <li>Lokale Orientierungstouren</li>
                     </ul>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <div class="icon icon-handshake"></div>
                     </div>
-                    <h3>Career Support</h3>
-                    <p>Continuous support for career development and professional growth in Germany.</p>
+                    <h3>Karrierebetreuung</h3>
+                    <p>Kontinuierliche Unterstützung für Karriereentwicklung und berufliches Wachstum in Deutschland.</p>
                     <ul class="feature-list">
-                        <li>Regular check-ins</li>
-                        <li>Career advancement opportunities</li>
-                        <li>Professional network building</li>
-                        <li>Continuing education guidance</li>
+                        <li>Regelmäßige Check-ins</li>
+                        <li>Karriereentwicklungsmöglichkeiten</li>
+                        <li>Professioneller Netzwerkaufbau</li>
+                        <li>Weiterbildungsberatung</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon icon-shield"></div>
+                    </div>
+                    <h3>Qualitätssicherung & Nachbetreuung</h3>
+                    <p>Umfassende Qualitätskontrolle und langfristige Betreuung für nachhaltigen Erfolg.</p>
+                    <ul class="feature-list">
+                        <li>24/7 Notfall-Hotline</li>
+                        <li>Qualitätsmonitoring</li>
+                        <li>Arbeitgeber-Mediation</li>
+                        <li>Langzeitbetreuung (2 Jahre)</li>
                     </ul>
                 </div>
             </div>
@@ -1088,73 +1357,73 @@
     <section id="specializations" class="specializations">
         <div class="container">
             <div class="section-header">
-                <h2>Medical Specializations</h2>
-                <p>Expert recruitment across all major medical disciplines throughout Germany's healthcare system.</p>
+                <h2>Medizinische Fachbereiche</h2>
+                <p>Expertenvermittlung in allen wichtigen medizinischen Disziplinen im deutschen Gesundheitssystem.</p>
             </div>
             <div class="specializations-content">
                 <div class="specializations-info">
-                    <h3>Our Expertise</h3>
-                    <p>With over 8 years of experience in healthcare recruitment, we understand the specific requirements of placing medical professionals in Germany.</p>
-                    <p>Our team works closely with leading hospitals and healthcare facilities to ensure optimal placement matches.</p>
+                    <h3>Unsere Expertise</h3>
+                    <p>Mit über 8 Jahren Erfahrung in der Gesundheitspersonalvermittlung verstehen wir die spezifischen Anforderungen für die Platzierung von medizinischen Fachkräften in Deutschland.</p>
+                    <p>Unser Team arbeitet eng mit führenden Krankenhäusern und Gesundheitseinrichtungen zusammen, um optimale Vermittlungsmatches zu gewährleisten.</p>
                     <div class="specializations-stats">
                         <div class="spec-stat">
                             <h4>25+</h4>
-                            <p>Medical Specialties</p>
+                            <p>Medizinische Fachbereiche</p>
                         </div>
                         <div class="spec-stat">
                             <h4>200+</h4>
-                            <p>Healthcare Facilities</p>
+                            <p>Gesundheitseinrichtungen</p>
                         </div>
                         <div class="spec-stat">
-                            <h4>15+</h4>
-                            <p>German States</p>
+                            <h4>16</h4>
+                            <p>Bundesländer</p>
                         </div>
                         <div class="spec-stat">
                             <h4>98%</h4>
-                            <p>Placement Success</p>
+                            <p>Vermittlungserfolg</p>
                         </div>
                     </div>
                 </div>
                 <div class="specializations-list">
                     <div class="spec-item">
-                        <h4>Internal Medicine</h4>
-                        <p>General internal medicine, gastroenterology, endocrinology, rheumatology</p>
+                        <h4>Innere Medizin</h4>
+                        <p>Allgemeine Innere Medizin, Gastroenterologie, Endokrinologie, Rheumatologie</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Surgery</h4>
-                        <p>General surgery, orthopedic surgery, cardiac surgery, neurosurgery</p>
+                        <h4>Chirurgie</h4>
+                        <p>Allgemeinchirurgie, Orthopädie, Herzchirurgie, Neurochirurgie</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Emergency Medicine</h4>
-                        <p>Emergency physicians, intensive care specialists, trauma medicine</p>
+                        <h4>Notfallmedizin</h4>
+                        <p>Notärzte, Intensivmedizin-Spezialisten, Traumatologie</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Cardiology</h4>
-                        <p>Interventional cardiology, electrophysiology, cardiac imaging</p>
+                        <h4>Kardiologie</h4>
+                        <p>Interventionelle Kardiologie, Elektrophysiologie, Herzbildgebung</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Neurology</h4>
-                        <p>Clinical neurology, stroke medicine, neurointensive care</p>
+                        <h4>Neurologie</h4>
+                        <p>Klinische Neurologie, Schlaganfallmedizin, Neurointensivmedizin</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Pediatrics</h4>
-                        <p>General pediatrics, neonatology, pediatric intensive care</p>
+                        <h4>Pädiatrie</h4>
+                        <p>Allgemeine Pädiatrie, Neonatologie, Kinderintensivmedizin</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Nursing</h4>
-                        <p>ICU nursing, surgical nursing, pediatric nursing, geriatric care</p>
+                        <h4>Pflege</h4>
+                        <p>Intensivpflege, OP-Pflege, Kinderkrankenpflege, Altenpflege</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Radiology</h4>
-                        <p>Diagnostic radiology, interventional radiology, nuclear medicine</p>
+                        <h4>Radiologie</h4>
+                        <p>Diagnostische Radiologie, Interventionelle Radiologie, Nuklearmedizin</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Anesthesiology</h4>
-                        <p>General anesthesia, pain management, critical care medicine</p>
+                        <h4>Anästhesiologie</h4>
+                        <p>Allgemeinanästhesie, Schmerztherapie, Intensivmedizin</p>
                     </div>
                     <div class="spec-item">
-                        <h4>Psychiatry</h4>
-                        <p>Adult psychiatry, child psychiatry, forensic psychiatry</p>
+                        <h4>Psychiatrie</h4>
+                        <p>Erwachsenenpsychiatrie, Kinder- und Jugendpsychiatrie, Forensische Psychiatrie</p>
                     </div>
                 </div>
             </div>
@@ -1165,39 +1434,48 @@
     <section id="process" class="process">
         <div class="container">
             <div class="section-header">
-                <h2>Your Journey to Germany</h2>
-                <p>Our structured 6-step process ensures successful placement and seamless integration.</p>
+                <h2>Ihr Weg nach Deutschland</h2>
+                <p>Unser strukturierter 6-Schritte-Prozess gewährleistet erfolgreiche Platzierung und nahtlose Integration.</p>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Application Review</h3>
-                    <p>Submit your medical qualifications and career preferences. We conduct thorough evaluation and assess compatibility with German standards.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Professional Assessment</h3>
-                    <p>Comprehensive interviews in Portuguese, English, and German. We evaluate medical knowledge and cultural adaptability.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Language Certification</h3>
-                    <p>Intensive German training to achieve B2/C1 certification with focus on medical terminology and patient communication.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>License Recognition</h3>
-                    <p>Guidance through the Approbation process - official recognition of medical qualifications by German authorities.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3>Job Placement</h3>
-                    <p>Matching with healthcare institutions based on specialty and preferences. Interview facilitation and contract negotiation.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">6</div>
-                    <h3>Integration Support</h3>
-                    <p>Complete relocation support including accommodation, workplace orientation, and ongoing assistance during first months.</p>
+            <div class="process-timeline">
+                <div class="process-line"></div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Bewerbungsprüfung</h3>
+                        <p>Einreichung Ihrer medizinischen Qualifikationen und Karrierewünsche. Wir führen eine gründliche Bewertung durch und prüfen die Kompatibilität mit deutschen Standards.</p>
+                        <div class="process-duration">Dauer: 1-2 Wochen</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Fachliche Bewertung</h3>
+                        <p>Umfassende Interviews in Portugiesisch, Englisch und Deutsch. Wir bewerten medizinisches Wissen und kulturelle Anpassungsfähigkeit.</p>
+                        <div class="process-duration">Dauer: 2-3 Wochen</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Sprachzertifizierung</h3>
+                        <p>Intensives Deutschtraining zur Erreichung der B2/C1-Zertifizierung mit Fokus auf medizinische Terminologie und Patientenkommunikation.</p>
+                        <div class="process-duration">Dauer: 6-12 Monate</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Lizenzerkennung</h3>
+                        <p>Begleitung durch das Approbationsverfahren - offizielle Anerkennung medizinischer Qualifikationen durch deutsche Behörden.</p>
+                        <div class="process-duration">Dauer: 3-6 Monate</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Stellenvermittlung</h3>
+                        <p>Matching mit Gesundheitseinrichtungen basierend auf Fachgebiet und Präferenzen. Interviewbegleitung und Vertragsverhandlung.</p>
+                        <div class="process-duration">Dauer: 2-4 Wochen</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Integrationsunterstützung</h3>
+                        <p>Komplette Umzugsunterstützung inklusive Unterkunft, Arbeitsplatzorientierung und fortlaufende Betreuung in den ersten Monaten.</p>
+                        <div class="process-duration">Dauer: Fortlaufend</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1207,35 +1485,154 @@
     <section class="success-stories">
         <div class="container">
             <div class="section-header">
-                <h2>Success Stories</h2>
-                <p>Real experiences from healthcare professionals who successfully transitioned to Germany.</p>
+                <h2>Erfolgsgeschichten</h2>
+                <p>Echte Erfahrungen von Gesundheitsfachkräften, die erfolgreich nach Deutschland gewechselt sind.</p>
             </div>
-            <div class="stories-grid">
-                <div class="story-card">
-                    <div class="story-quote">
-                        "HFS transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at Munich's leading cardiac center."
+            <div class="stories-container">
+                <div class="stories-tabs">
+                    <button class="tab-button active" onclick="showStories('professionals')">Fachkräfte</button>
+                    <button class="tab-button" onclick="showStories('employers')">Arbeitgeber</button>
+                    <button class="tab-button" onclick="showStories('families')">Familien</button>
+                </div>
+                <div class="stories-grid" id="stories-professionals">
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "HFS hat meine Karriereträume Realität werden lassen. Die umfassende Unterstützung war außergewöhnlich. Ich arbeite jetzt als Kardiologin in Münchens führendem Herzzentrum."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">MS</div>
+                            <div class="author-info">
+                                <h4>Dr. Maria Santos</h4>
+                                <p>Interventionelle Kardiologin, München</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="story-author">
-                        <h4>Dr. Maria Santos</h4>
-                        <p>Interventional Cardiologist, Munich</p>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "Die professionelle Begleitung während des gesamten Prozesses war bemerkenswert. Jedes Detail wurde sorgfältig betreut. Ich bin jetzt als Kinderkrankenschwester in Berlin sehr erfolgreich."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">AR</div>
+                            <div class="author-info">
+                                <h4>Ana Rodriguez</h4>
+                                <p>Kinderkrankenschwester Intensivstation, Berlin</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "Der Übergang war dank HFS nahtlos. Von der Sprachvorbereitung bis zur Integration - alles war perfekt organisiert. Meine Familie fühlt sich hier wie zu Hause."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">CS</div>
+                            <div class="author-info">
+                                <h4>Dr. Carlos Silva</h4>
+                                <p>Orthopädischer Chirurg, Hamburg</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-card">
-                    <div class="story-quote">
-                        "The professional guidance throughout the entire process was remarkable. Every detail was carefully managed. I'm now thriving as a pediatric nurse in Berlin."
+                <div class="stories-grid" id="stories-employers" style="display: none;">
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "HFS liefert konstant exzellente Gesundheitsfachkräfte, die gut vorbereitet sind und sofort zu unserem medizinischen Team beitragen können."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">KW</div>
+                            <div class="author-info">
+                                <h4>Dr. Klaus Weber</h4>
+                                <p>Ärztlicher Direktor, Frankfurt</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="story-author">
-                        <h4>Ana Rodriguez</h4>
-                        <p>Pediatric ICU Nurse, Berlin</p>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "Die Zusammenarbeit mit HFS hat unseren Personalmangel effektiv gelöst. Die vermittelten Fachkräfte sind hochqualifiziert und motiviert."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sabine Müller</h4>
+                                <p>Pflegedirektorin, Düsseldorf</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "HFS versteht unsere Anforderungen perfekt. Die Betreuung ist professionell und die Ergebnisse übertreffen unsere Erwartungen."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">MB</div>
+                            <div class="author-info">
+                                <h4>Dr. Michael Braun</h4>
+                                <p>Chefarzt Chirurgie, Stuttgart</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-card">
-                    <div class="story-quote">
-                        "HFS consistently provides excellent healthcare professionals who are well-prepared and ready to contribute immediately to our medical team."
+                <div class="stories-grid" id="stories-families" style="display: none;">
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "HFS hat nicht nur meinem Mann bei der Karriere geholfen, sondern auch unsere ganze Familie unterstützt. Die Kinder sind in der Schule gut integriert."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">LP</div>
+                            <div class="author-info">
+                                <h4>Lucia Pereira</h4>
+                                <p>Ehefrau von Dr. João Pereira, Köln</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="story-author">
-                        <h4>Dr. Klaus Weber</h4>
-                        <p>Medical Director, Frankfurt</p>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "Die Familienbetreuung war außergewöhnlich. Von der Schulanmeldung bis zu kulturellen Aktivitäten - HFS dachte an alles."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">RF</div>
+                            <div class="author-info">
+                                <h4>Roberto Fernandez</h4>
+                                <p>Familienvater, Nürnberg</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-quote">
+                            "Deutschland fühlt sich dank HFS wie eine neue Heimat an. Die kontinuierliche Unterstützung war entscheidend für unseren Erfolg."
+                        </div>
+                        <div class="story-author">
+                            <div class="author-avatar">TS</div>
+                            <div class="author-info">
+                                <h4>Teresa Santos</h4>
+                                <p>Familie Santos, Bremen</p>
+                                <div class="story-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1246,20 +1643,20 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Start Your Journey</h2>
-                <p>Ready to advance your healthcare career in Germany? Contact our team for personalized consultation.</p>
+                <h2>Starten Sie Ihre Reise</h2>
+                <p>Bereit, Ihre Gesundheitskarriere in Deutschland voranzutreiben? Kontaktieren Sie unser Team für eine persönliche Beratung.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get in Touch</h3>
+                    <h3>Kontakt aufnehmen</h3>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <div class="icon icon-phone"></div>
                         </div>
                         <div>
-                            <h4>Phone</h4>
+                            <h4>Telefon</h4>
                             <a href="tel:+5581911163133">+55 81 9111-6313</a>
-                            <p>Speak directly with our specialists</p>
+                            <p>Sprechen Sie direkt mit unseren Spezialisten</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1267,9 +1664,9 @@
                             <div class="icon icon-email"></div>
                         </div>
                         <div>
-                            <h4>Email</h4>
+                            <h4>E-Mail</h4>
                             <a href="mailto:info@healthstaff-finders.de">info@healthstaff-finders.de</a>
-                            <p>Detailed inquiries and documents</p>
+                            <p>Detaillierte Anfragen und Dokumente</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1277,64 +1674,64 @@
                             <div class="icon icon-clock"></div>
                         </div>
                         <div>
-                            <h4>Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM (CET)<br>Emergency support available 24/7</p>
+                            <h4>Öffnungszeiten</h4>
+                            <p>Montag - Freitag: 9:00 - 18:00 Uhr (MEZ)<br>Notfall-Support 24/7 verfügbar</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Application Form</h3>
+                    <h3>Bewerbungsformular</h3>
                     <form>
                         <div class="form-group">
-                            <label>I am a</label>
+                            <label>Ich bin</label>
                             <select>
-                                <option>Healthcare Professional</option>
-                                <option>Medical Institution</option>
-                                <option>Medical Student</option>
-                                <option>Healthcare Administrator</option>
+                                <option>Gesundheitsfachkraft</option>
+                                <option>Medizinische Einrichtung</option>
+                                <option>Medizinstudent</option>
+                                <option>Gesundheitsadministrator</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Dr./Nurse [Your Name]">
+                            <label>Vollständiger Name</label>
+                            <input type="text" placeholder="Dr./Pfleger [Ihr Name]">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="your.email@example.com">
+                            <label>E-Mail</label>
+                            <input type="email" placeholder="ihre.email@beispiel.com">
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
+                            <label>Telefon</label>
                             <input type="tel" placeholder="+55 11 99999-9999">
                         </div>
                         <div class="form-group">
-                            <label>Specialty</label>
-                            <input type="text" placeholder="e.g., Cardiology, Nursing">
+                            <label>Fachbereich</label>
+                            <input type="text" placeholder="z.B. Kardiologie, Pflege">
                         </div>
                         <div class="form-group">
-                            <label>Experience</label>
+                            <label>Berufserfahrung</label>
                             <select>
-                                <option>Less than 2 years</option>
-                                <option>2-5 years</option>
-                                <option>5-10 years</option>
-                                <option>10+ years</option>
+                                <option>Weniger als 2 Jahre</option>
+                                <option>2-5 Jahre</option>
+                                <option>5-10 Jahre</option>
+                                <option>10+ Jahre</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>German Level</label>
+                            <label>Deutschkenntnisse</label>
                             <select>
-                                <option>No German</option>
-                                <option>A1 - Beginner</option>
-                                <option>A2 - Elementary</option>
-                                <option>B1 - Intermediate</option>
-                                <option>B2 - Upper Intermediate</option>
-                                <option>C1 - Advanced</option>
+                                <option>Kein Deutsch</option>
+                                <option>A1 - Anfänger</option>
+                                <option>A2 - Grundkenntnisse</option>
+                                <option>B1 - Mittelstufe</option>
+                                <option>B2 - Gute Mittelstufe</option>
+                                <option>C1 - Fortgeschritten</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Tell us about your background and career goals..."></textarea>
+                            <label>Nachricht</label>
+                            <textarea rows="4" placeholder="Erzählen Sie uns von Ihrem Hintergrund und Ihren Karrierezielen..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Bewerbung senden</button>
                     </form>
                 </div>
             </div>
@@ -1347,34 +1744,34 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>HFS Healthcare</h3>
-                    <p>Your trusted partner for medical career advancement in Germany. Connecting Brazilian healthcare professionals with leading German institutions.</p>
+                    <p>Ihr vertrauensvoller Partner für medizinische Karriereentwicklung in Deutschland. Wir verbinden brasilianische Gesundheitsfachkräfte mit führenden deutschen Einrichtungen.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="#services">Career Placement</a>
-                    <a href="#services">Legal Support</a>
-                    <a href="#services">Language Training</a>
+                    <a href="#services">Karrierevermittlung</a>
+                    <a href="#services">Rechtliche Unterstützung</a>
+                    <a href="#services">Sprachtraining</a>
                     <a href="#services">Integration</a>
-                    <a href="#services">Relocation</a>
+                    <a href="#services">Umzug</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Specializations</h3>
-                    <a href="#specializations">Internal Medicine</a>
-                    <a href="#specializations">Surgery</a>
-                    <a href="#specializations">Nursing</a>
-                    <a href="#specializations">Emergency Medicine</a>
-                    <a href="#specializations">Pediatrics</a>
+                    <h3>Fachbereiche</h3>
+                    <a href="#specializations">Innere Medizin</a>
+                    <a href="#specializations">Chirurgie</a>
+                    <a href="#specializations">Pflege</a>
+                    <a href="#specializations">Notfallmedizin</a>
+                    <a href="#specializations">Pädiatrie</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
+                    <h3>Kontakt</h3>
                     <p>+55 81 9111-6313</p>
                     <p>info@healthstaff-finders.de</p>
-                    <p>Mon-Fri 9:00-18:00 CET</p>
-                    <p>24/7 Emergency Support</p>
+                    <p>Mo-Fr 9:00-18:00 MEZ</p>
+                    <p>24/7 Notfall-Support</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HFS Healthcare Staffing Solutions. All rights reserved.</p>
+                <p>&copy; 2025 HFS Healthcare Staffing Solutions. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
@@ -1409,8 +1806,27 @@
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your application! Our team will contact you within 24 hours.');
+            alert('Vielen Dank für Ihre Bewerbung! Unser Team wird Sie innerhalb von 24 Stunden kontaktieren.');
         });
+
+        // Success Stories Tabs
+        function showStories(category) {
+            // Hide all story grids
+            document.querySelectorAll('.stories-grid').forEach(grid => {
+                grid.style.display = 'none';
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected category
+            document.getElementById(`stories-${category}`).style.display = 'grid';
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
 
         // Animate hero stats
         function animateNumbers() {
