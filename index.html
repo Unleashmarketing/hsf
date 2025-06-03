@@ -1909,6 +1909,7 @@
                </div>
                <div class="footer-section">
                    <h3>Contact</h3>
+                   <p>Jonas Hanauer</p>
                    <p>+49 162 6151832</p>
                    <p>info@healthstaff-finders.de</p>
                </div>
@@ -1916,9 +1917,8 @@
            <div class="footer-bottom">
                <p>&copy; 2025 HFS Healthcare Staffing Solutions. All rights reserved.</p>
                <div class="footer-legal">
-                   <a href="#privacy" onclick="showPrivacyPolicy()">Privacy Policy</a>
-                   <a href="#imprint" onclick="showImprint()">Imprint</a>
-                   <a href="#terms" onclick="showTerms()">Terms of Service</a>
+                   <a href="privacy.html">Privacy Policy</a>
+                   <a href="imprint.html">Imprint</a>
                </div>
            </div>
        </div>
@@ -1960,114 +1960,7 @@
            banner.classList.remove('show');
        }
 
-       // Legal Pages Functions
-       function showPrivacyPolicy() {
-           alert(`Privacy Policy
-
-HFS Healthcare Staffing Solutions
-
-Data Controller:
-HFS Healthcare Staffing Solutions
-Email: info@healthstaff-finders.de
-Phone: +55 81 9111-6313
-
-Data We Collect:
-- Contact information (name, email, phone)
-- Professional qualifications and experience
-- Application data and documents
-- Website usage data (with consent)
-
-Purpose of Processing:
-- Recruitment and placement services
-- Communication and support
-- Service improvement
-- Legal compliance
-
-Your Rights:
-- Access to your personal data
-- Rectification of inaccurate data
-- Erasure of data
-- Data portability
-- Objection to processing
-
-Cookies:
-We use essential cookies for website functionality and analytics cookies (with your consent) to improve our services.
-
-Contact our Data Protection Officer at: privacy@healthstaff-finders.de
-
-This is a simplified version. For the complete privacy policy, please contact us.`);
-       }
-
-       function showImprint() {
-           alert(`Imprint (Impressum)
-
-According to §5 TMG (Telemediengesetz):
-
-HFS Healthcare Staffing Solutions
-
-Responsible for content:
-[Company Name]
-[Address]
-[City, Postal Code]
-Germany
-
-Contact:
-Phone: +55 81 9111-6313
-Email: info@healthstaff-finders.de
-Website: www.healthstaff-finders.de
-
-Commercial Register:
-[Registration details would go here]
-
-VAT ID: [VAT number]
-
-Professional Liability Insurance:
-[Insurance details]
-
-Responsible for content according to §18 Abs. 2 MStV:
-[Name and address]
-
-Disclaimer:
-Despite careful content control, we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.
-
-Online Dispute Resolution:
-Platform of the European Commission for online dispute resolution: https://ec.europa.eu/consumers/odr/`);
-       }
-
-       function showTerms() {
-           alert(`Terms of Service
-
-HFS Healthcare Staffing Solutions
-
-1. Services
-We provide healthcare recruitment and placement services for medical professionals seeking employment in Germany.
-
-2. Application Process
-- All information provided must be accurate and complete
-- We reserve the right to verify all credentials
-- Application does not guarantee placement
-
-3. Fees and Payments
-- Our services are provided free of charge to candidates
-- Employer fees apply as per separate agreements
-
-4. Confidentiality
-- All personal and professional information is treated confidentially
-- Data is processed according to our Privacy Policy
-
-5. Liability
-- We provide services with due care and attention
-- Liability is limited to the extent permitted by law
-
-6. Termination
-- Either party may terminate the service agreement with reasonable notice
-
-7. Governing Law
-These terms are governed by German law.
-
-For complete terms and conditions, please contact us at: legal@healthstaff-finders.de`);
-       }
-
+ 
        // Smooth scrolling
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
            anchor.addEventListener('click', function (e) {
