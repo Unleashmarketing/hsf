@@ -1,634 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>HFS Healthcare - Your Medical Career in Germany</title>
-   <style>
-       * {
-           margin: 0;
-           padding: 0;
-           box-sizing: border-box;
-       }
-
-       body {
-           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-           line-height: 1.6;
-           color: #1d1d1f;
-           overflow-x: hidden;
-       }
-
-       .container {
-           max-width: 1200px;
-           margin: 0 auto;
-           padding: 0 20px;
-       }
-
-       /* Cookie Banner - Apple Style */
-       .cookie-banner {
-           position: fixed;
-           bottom: -100%;
-           left: 0;
-           right: 0;
-           background: rgba(255, 255, 255, 0.8);
-           backdrop-filter: saturate(180%) blur(20px);
-           border-top: 1px solid rgba(0, 0, 0, 0.1);
-           padding: 20px;
-           z-index: 1000;
-           transition: bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-       }
-
-       .cookie-banner.show {
-           bottom: 0;
-       }
-
-       .cookie-content {
-           max-width: 1200px;
-           margin: 0 auto;
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           gap: 32px;
-       }
-
-       .cookie-text p {
-           font-size: 15px;
-           line-height: 1.47;
-           color: #1d1d1f;
-           margin-bottom: 4px;
-       }
-
-       .cookie-text a {
-           color: #007aff;
-           text-decoration: none;
-       }
-
-       .cookie-buttons {
-           display: flex;
-           gap: 12px;
-           flex-shrink: 0;
-       }
-
-       .cookie-btn {
-           padding: 12px 24px;
-           border-radius: 8px;
-           border: none;
-           font-size: 15px;
-           font-weight: 500;
-           cursor: pointer;
-           transition: all 0.2s ease;
-           font-family: inherit;
-       }
-
-       .cookie-btn-accept {
-           background: #007aff;
-           color: white;
-       }
-
-       .cookie-btn-accept:hover {
-           background: #0056cc;
-       }
-
-       .cookie-btn-decline {
-           background: transparent;
-           color: #007aff;
-           border: 1px solid #007aff;
-       }
-
-       .cookie-btn-decline:hover {
-           background: rgba(0, 122, 255, 0.1);
-       }
-
-       /* Icons */
-       .icon {
-           width: 24px;
-           height: 24px;
-           display: inline-block;
-           background-size: contain;
-           background-repeat: no-repeat;
-           background-position: center;
-       }
-
-       .icon-medical {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6h5v2h2V6h1V4H8V1H6v3H2v2h2v12c0 1.1.9 2 2 2h6.31l-.82-.66C8.79 17.65 8 16.35 8 15V6H4z'/%3E%3C/svg%3E");
-       }
-
-       .icon-document {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-language {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-home {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-plane {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M20.56,3.44C21.15,4.03 21.15,4.97 20.56,5.56L5.56,20.56C4.97,21.15 4.03,21.15 3.44,20.56C2.85,19.97 2.85,19.03 3.44,18.44L18.44,3.44C19.03,2.85 19.97,2.85 20.56,3.44M8.5,5.5L4,10L6.5,12.5L15,4L8.5,5.5M12,8L8.5,11.5L11,14L20.5,4.5L12,8M5.5,12.5L4,14L10,20L11.5,18.5L5.5,12.5Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-handshake {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M11,11L13,13L15,11L13,9L11,11M13,7L17,3L15,1L11,5L7,1L5,3L9,7L7,9L9,11L11,9L13,7M13,17L9,21L11,23L15,19L19,23L21,21L17,17L19,15L17,13L15,15L13,17Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-shield {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007aff'%3E%3Cpath d='M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-phone {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z'/%3E%3C/svg%3E");
-       }
-
-       .icon-email {
-           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z'/%3E%3C/svg%3E");
-       }
-
-       /* Header */
-       header {
-           position: fixed;
-           top: 0;
-           left: 0;
-           right: 0;
-           background: rgba(255, 255, 255, 0.8);
-           backdrop-filter: saturate(180%) blur(20px);
-           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-           z-index: 100;
-           transition: all 0.3s ease;
-       }
-
-       nav {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           padding: 12px 20px;
-       }
-
-       .logo {
-           display: flex;
-           align-items: center;
-           gap: 12px;
-           font-size: 20px;
-           font-weight: 600;
-           color: #1d1d1f;
-       }
-
-       .nav-links {
-           display: flex;
-           list-style: none;
-           gap: 32px;
-           align-items: center;
-       }
-
-       .nav-links a {
-           text-decoration: none;
-           color: #1d1d1f;
-           font-weight: 400;
-           transition: color 0.2s ease;
-           font-size: 17px;
-       }
-
-       .nav-links a:hover {
-           color: #007aff;
-       }
-
-       .nav-cta {
-           background: #007aff;
-           color: white !important;
-           padding: 8px 16px;
-           border-radius: 20px;
-           font-weight: 500;
-       }
-
-       .nav-cta:hover {
-           background: #0056cc;
-           color: white !important;
-       }
-
-       /* Hero */
-       .hero {
-           padding: 140px 0 80px;
-           background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-           min-height: 100vh;
-           display: flex;
-           align-items: center;
-       }
-
-       .hero-content {
-           text-align: center;
-           max-width: 800px;
-           margin: 0 auto;
-       }
-
-       .hero h1 {
-           font-size: 56px;
-           font-weight: 700;
-           line-height: 1.1;
-           margin-bottom: 24px;
-           color: #1d1d1f;
-           letter-spacing: -0.02em;
-       }
-
-       .subtitle {
-           font-size: 24px;
-           font-weight: 400;
-           line-height: 1.4;
-           color: #6e6e73;
-           margin-bottom: 48px;
-           max-width: 700px;
-           margin-left: auto;
-           margin-right: auto;
-       }
-
-       .hero-features {
-           display: flex;
-           justify-content: center;
-           gap: 32px;
-           margin-bottom: 48px;
-           flex-wrap: wrap;
-       }
-
-       .hero-feature {
-           background: rgba(255, 255, 255, 0.7);
-           padding: 12px 24px;
-           border-radius: 24px;
-           font-weight: 500;
-           color: #1d1d1f;
-           border: 1px solid rgba(0, 0, 0, 0.1);
-           backdrop-filter: blur(10px);
-       }
-
-       .hero-stats {
-           display: flex;
-           justify-content: center;
-           gap: 64px;
-           margin-bottom: 48px;
-       }
-
-       .hero-stat {
-           text-align: center;
-       }
-
-       .hero-stat h3 {
-           font-size: 48px;
-           font-weight: 700;
-           color: #007aff;
-           margin-bottom: 8px;
-       }
-
-       .hero-stat p {
-           color: #6e6e73;
-           font-weight: 500;
-       }
-
-       .cta-buttons {
-           display: flex;
-           gap: 20px;
-           justify-content: center;
-           flex-wrap: wrap;
-       }
-
-       .btn {
-           display: inline-flex;
-           align-items: center;
-           gap: 8px;
-           padding: 16px 32px;
-           border-radius: 30px;
-           text-decoration: none;
-           font-weight: 500;
-           font-size: 17px;
-           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-           border: none;
-           cursor: pointer;
-           font-family: inherit;
-       }
-
-       .btn-primary {
-           background: #007aff;
-           color: white;
-       }
-
-       .btn-primary:hover {
-           background: #0056cc;
-           transform: translateY(-1px);
-           box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
-       }
-
-       .btn-secondary {
-           background: transparent;
-           color: #007aff;
-           border: 2px solid #007aff;
-       }
-
-       .btn-secondary:hover {
-           background: #007aff;
-           color: white;
-           transform: translateY(-1px);
-       }
-
-       /* Sections */
-       .section {
-           padding: 120px 0;
-       }
-
-       .section-light {
-           background: #fbfbfd;
-       }
-
-       .section-header {
-           text-align: center;
-           margin-bottom: 80px;
-           max-width: 800px;
-           margin-left: auto;
-           margin-right: auto;
-       }
-
-       .section-header h2 {
-           font-size: 48px;
-           font-weight: 700;
-           line-height: 1.1;
-           margin-bottom: 24px;
-           color: #1d1d1f;
-           letter-spacing: -0.02em;
-       }
-
-       .section-header p {
-           font-size: 21px;
-           line-height: 1.48;
-           color: #6e6e73;
-           font-weight: 400;
-       }
-
-       /* Features Grid */
-       .features-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-           gap: 32px;
-       }
-
-       .feature-card {
-           background: white;
-           padding: 48px 32px;
-           border-radius: 18px;
-           border: 1px solid rgba(0, 0, 0, 0.1);
-           transition: all 0.3s ease;
-           position: relative;
-       }
-
-       .feature-card:hover {
-           transform: translateY(-8px);
-           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-       }
-
-       .feature-icon {
-           width: 60px;
-           height: 60px;
-           background: #f5f5f7;
-           border-radius: 16px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           margin-bottom: 24px;
-       }
-
-       .feature-card h3 {
-           font-size: 24px;
-           font-weight: 600;
-           margin-bottom: 16px;
-           color: #1d1d1f;
-       }
-
-       .feature-card p {
-           color: #6e6e73;
-           line-height: 1.6;
-           margin-bottom: 24px;
-           font-size: 17px;
-       }
-
-       .feature-list {
-           list-style: none;
-           padding: 0;
-       }
-
-       .feature-list li {
-           padding: 8px 0;
-           color: #6e6e73;
-           position: relative;
-           padding-left: 24px;
-           font-size: 15px;
-       }
-
-       .feature-list li:before {
-           content: "✓";
-           position: absolute;
-           left: 0;
-           color: #007aff;
-           font-weight: 600;
-       }
-
-       /* Specializations */
-       .specializations {
-           padding: 120px 0;
-           background: white;
-       }
-
-       .specializations-content {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 80px;
-           align-items: start;
-       }
-
-       .specializations-info h3 {
-           font-size: 32px;
-           font-weight: 600;
-           margin-bottom: 24px;
-           color: #1d1d1f;
-       }
-
-       .specializations-info p {
-           color: #6e6e73;
-           line-height: 1.6;
-           margin-bottom: 24px;
-           font-size: 17px;
-       }
-
-       .specializations-stats {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 32px;
-           margin-top: 48px;
-       }
-
-       .spec-stat {
-           text-align: center;
-           padding: 24px;
-           background: #f5f5f7;
-           border-radius: 12px;
-       }
-
-       .spec-stat h4 {
-           font-size: 32px;
-           font-weight: 700;
-           color: #007aff;
-           margin-bottom: 8px;
-       }
-
-       .spec-stat p {
-           color: #6e6e73;
-           font-weight: 500;
-           font-size: 15px;
-       }
-
-       .specializations-list {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 24px;
-       }
-
-       .spec-item {
-           padding: 24px;
-           background: #f5f5f7;
-           border-radius: 12px;
-           transition: all 0.2s ease;
-       }
-
-       .spec-item:hover {
-           background: #ebebf0;
-           transform: translateY(-2px);
-       }
-
-       .spec-item h4 {
-           font-size: 17px;
-           font-weight: 600;
-           margin-bottom: 8px;
-           color: #1d1d1f;
-       }
-
-       .spec-item p {
-           color: #6e6e73;
-           font-size: 14px;
-           line-height: 1.4;
-       }
-
-       /* Process */
-       .process {
-           padding: 120px 0;
-           background: #fbfbfd;
-       }
-
-       .process-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-           gap: 48px;
-       }
-
-       .process-step {
-           text-align: center;
-           position: relative;
-       }
-
-       .step-number {
-           width: 60px;
-           height: 60px;
-           background: #007aff;
-           color: white;
-           border-radius: 50%;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-size: 24px;
-           font-weight: 600;
-           margin: 0 auto 24px;
-       }
-
-       .process-step h3 {
-           font-size: 24px;
-           font-weight: 600;
-           margin-bottom: 16px;
-           color: #1d1d1f;
-       }
-
-       .process-step p {
-           color: #6e6e73;
-           line-height: 1.6;
-           margin-bottom: 16px;
-           font-size: 17px;
-       }
-
-       .process-duration {
-           background: rgba(0, 122, 255, 0.1);
-           color: #007aff;
-           padding: 8px 16px;
-           border-radius: 20px;
-           font-size: 14px;
-           font-weight: 500;
-           display: inline-block;
-       }
-
-       /* Success Stories */
-       .success-stories {
-           padding: 120px 0;
-           background: white;
-       }
-
-       .stories-container {
-           max-width: 1000px;
-           margin: 0 auto;
-       }
-
-       .stories-tabs {
-           display: flex;
-           justify-content: center;
-           gap: 4px;
-           margin-bottom: 48px;
-       }
-
-       .tab-button {
-           padding: 12px 24px;
-           background: transparent;
-           border: 1px solid #d2d2d7;
-           border-radius: 8px;
-           font-size: 15px;
-           font-weight: 500;
-           color: #6e6e73;
-           cursor: pointer;
-           transition: all 0.2s ease;
-           font-family: inherit;
-       }
-
-       .tab-button.active {
-           background: #007aff;
-           color: white;
-           border-color: #007aff;
-       }
-
-       .tab-button:hover:not(.active) {
-           background: #f5f5f7;
-       }
-
-       .stories-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-           gap: 32px;
-       }
-
-       .story-card {
-           background: #f5f5f7;
-           padding: 32px;
-           border-radius: 16px;
-           position: relative;
-       }
-
-       .story-quote {
-           font-size: 17px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSF - Health Staff Finders | Professional Healthcare Recruitment</title>
+
+    <meta name="description" content="Leading healthcare recruitment agency connecting Brazilian medical professionals with top German hospitals. 200+ successful placements, complete support including German language training, visa assistance, and relocation services. Start your medical career in Germany today.">
+    <meta name="keywords" content="medical jobs Germany, healthcare recruitment Germany, Brazilian doctors Germany, nursing jobs Germany, medical visa Germany, Approbation Germany, German language medical training, healthcare staffing Germany, international medical recruitment, doctor jobs Berlin Munich Hamburg, nursing positions Germany, medical career Germany, healthcare professionals Germany, Arzt Jobs Deutschland, Krankenpfleger Stellen Deutschland, medizinische Arbeit Deutschland, Ärzte aus Brasilien Deutschland, Approbation Deutschland, deutsche Krankenhäuser Jobs, Pflegekräfte Deutschland, medical jobs Germany, healthcare recruitment Germany, Brazilian doctors Germany, nursing jobs Germany, Gesundheitswesen Jobs Deutschland, Ärztevermittlung Deutschland, brasilianische Ärzte Deutschland">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.healthstaff-finders.de/">
+
+    <meta name="author" content="HFS Healthcare Staffing Solutions">
+    <meta name="language" content="en">
+    <meta name="geo.region" content="DE">
+    <meta name="geo.country" content="Germany">
+    <meta name="geo.placename" content="Germany">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="7 days">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HSF Healthcare Staff Finders - Medical Jobs Germany | Healthcare Recruitment">
+    <meta property="og:description" content="Leading healthcare recruitment agency connecting Brazilian medical professionals with top German hospitals. 500+ successful placements.">
+    <meta property="og:url" content="https://www.healthstaff-finders.de/">
+    <meta property="og:site_name" content="HSF Health Staff Finders">
+    <meta property="og:locale" content="en_US">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(29, 29, 31, 0.95);
+            backdrop-filter: saturate(180%) blur(20px);
+            color: white;
+            padding: 24px;
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cookie-text p {
+            font-size: 15px;
+            line-height: 1.47;
+            margin-bottom: 8px;
+        }
+
+        .cookie-text a {
+            color: #007aff;
+            text-decoration: none;
+        }
+
+        .cookie-text a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 12px 24px;
+            border-radius: 20px;
+            border: none;
+            font-weight: 500;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .cookie-btn-accept {
+            background: #007aff;
+            color: white;
+        }
+
+        .cookie-btn-accept:hover {
+            background: #0056cc;
+            transform: translateY(-1px);
+        }
+
+        .cookie-btn-decline {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-btn-decline:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Custom Icons - Simplified Apple Style */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+
+        .icon-medical::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background: currentColor;
+            top: 10px;
+            left: 2px;
+            border-radius: 2px;
+        }
+
+        .icon-medical::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 20px;
+            background: currentColor;
+            top: 2px;
+            left: 10px;
+            border-radius: 2px;
+        }
+
+        .icon-document {
+            border: 2px solid currentColor;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .icon-document::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            background: currentColor;
+            top: 5px;
+            left: 4px;
+            border-radius: 1px;
+        }
+
+        .icon-document::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            background: currentColor;
+            top: 10px;
+            left: 4px;
+            border-radius: 1px;
+        }
+
+        .icon-language {
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .icon-language::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 1px;
+            background: currentColor;
+            top: 50%;
+            left: 3px;
+            transform: translateY(-50%);
+        }
+
+        .icon-language::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 16px;
+            background: currentColor;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .icon-home {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid currentColor;
+            position: relative;
+        }
+
+        .icon-home::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            background: currentColor;
+            bottom: -18px;
+            left: -5px;
+        }
+
+        .icon-plane {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 5px solid currentColor;
+            position: relative;
+            transform: rotate(-45deg);
+        }
+
+        .icon-handshake::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 6px;
+            border: 2px solid currentColor;
+            border-radius: 12px 12px 0 0;
+            top: 8px;
+            left: 2px;
+        }
+
+        .icon-handshake::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 12px;
+            border: 2px solid currentColor;
+            border-radius: 0 12px 12px 0;
+            top: 2px;
+            right: 2px;
+        }
+
+        .icon-shield::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 20px;
+            border: 2px solid currentColor;
+            border-radius: 8px 8px 16px 16px;
+            top: 2px;
+            left: 4px;
+        }
+
+        .icon-shield::after {
+            content: '✓';
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+            top: 7px;
+            left: 9px;
+            color: currentColor;
+        }
+
+        .icon-phone::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 18px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            top: 3px;
+            left: 5px;
+        }
+
+        .icon-phone::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 2px;
+            background: currentColor;
+            top: 17px;
+            left: 9px;
+            border-radius: 1px;
+        }
+
+        .icon-email {
+            width: 18px;
+            height: 12px;
+            border: 2px solid currentColor;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .icon-email::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 4px solid currentColor;
+            top: 1px;
+            left: 3px;
+        }
+
+        .icon-clock {
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .icon-clock::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 6px;
+            background: currentColor;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .icon-clock::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 1px;
+            background: currentColor;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            height: 70px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            height: 54px;
+            margin-top: 10px !important;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
+        }
+
+        .logo .icon-medical {
+            color: #007aff;
+            width: 24px;
+            height: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 17px;
+            padding: 10px 10px;
+            transition: color 0.2s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a:hover {
+            color: #007aff;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 22px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+
+        /* Hero Section - Apple Style */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.07;
+            letter-spacing: -0.015em;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 56px 0;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat h3 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-stat p {
+            font-size: 17px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #007aff;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Sections - Apple Style */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-light {
+            background: #f5f5f7;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.015em;
+            line-height: 1.08;
+        }
+
+        .section-header p {
+            font-size: 21px;
+            color: #6e6e73;
+            line-height: 1.38;
+            letter-spacing: -0.01em;
+            font-weight: 400;
+        }
+
+        /* Features Grid - Apple Style */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 48px 32px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            color: #6e6e73;
+            line-height: 1.47;
+            margin-bottom: 24px;
+            font-size: 17px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: #6e6e73;
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #34c759;
+            font-weight: 600;
+        }
+
+        /* Specializations - Apple Style */
+        .specializations {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            position: relative;
+        }
+
+        .specializations::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,122,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .specializations-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            margin-top: 80px;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .specializations-info {
+            background: white;
+            padding: 48px;
+            border-radius: 24px;
+            position: sticky;
+            top: 120px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .specializations-info h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .specializations-info p {
+            margin-bottom: 24px;
+            line-height: 1.47;
+            color: #6e6e73;
+            font-size: 17px;
+        }
+
+        .specializations-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .spec-stat {
+            text-align: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #f5f5f7, #e8e8ed);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .spec-stat h4 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #007aff;
+            letter-spacing: -0.01em;
+        }
+
+        .spec-stat p {
+            font-size: 15px;
+            color: #6e6e73;
+            font-weight: 400;
+        }
+
+        .specializations-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .spec-item {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spec-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #007aff, #5856d6, #af52de);
+        }
+
+        .spec-item:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .spec-item h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+            letter-spacing: -0.01em;
+        }
+
+        .spec-item p {
+            font-size: 15px;
+            color: #6e6e73;
+            line-height: 1.47;
+        }
+
+        /* Process - Apple Style */
+        .process {
+            padding: 120px 0;
+            background: #f5f5f7;
+            position: relative;
+        }
+
+        .process-timeline {
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step {
+            background: white;
+            padding: 48px 32px 80px 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-step:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -24px;
+            left: 32px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+            border: 4px solid white;
+        }
+
+        .process-step h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            margin-top: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .process-step p {
+            color: #6e6e73;
+            line-height: 1.47;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .process-duration {
+            position: absolute;
+            bottom: 24px;
+            left: 32px;
+            right: 32px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Success Stories - Apple Style */
+        .success-stories {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .stories-container {
+            margin-top: 80px;
+        }
+
+        .stories-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
+            background: #f5f5f7;
+            padding: 8px;
+            border-radius: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #6e6e73;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #007aff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            padding: 48px 32px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 32px;
+            font-size: 80px;
+            color: rgba(0, 122, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-quote {
+            font-size: 19px;
+            font-style: italic;
+            margin-bottom: 32px;
            line-height: 1.42;
            color: #1d1d1f;
            font-weight: 400;
            position: relative;
            z-index: 2;
-           margin-bottom: 24px;
        }
 
        .story-author {
@@ -892,7 +1264,7 @@
                font-size: 36px;
            }
 
-.features-grid {
+           .features-grid {
                grid-template-columns: 1fr;
            }
 
@@ -978,7 +1350,7 @@
        <div class="cookie-content">
            <div class="cookie-text">
                <p><strong>We use cookies to enhance your experience.</strong></p>
-               <p>This website uses essential cookies for functionality and analytics cookies to help us improve our services. By continuing to browse, you agree to our use of cookies. Learn more in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+               <p>This website uses essential cookies for functionality and analytics cookies to help us improve our services. By continuing to browse, you agree to our use of cookies. Learn more in our <a href="#privacy">Privacy Policy</a>.</p>
            </div>
            <div class="cookie-buttons">
                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept All</button>
@@ -1117,13 +1489,13 @@
                    <div class="feature-icon">
                        <div class="icon icon-shield"></div>
                    </div>
-                   <h3>Quality Assurance</h3>
+                   <h3>Quality Assurance & After-care</h3>
                    <p>Comprehensive quality control and long-term support for sustainable success.</p>
                    <ul class="feature-list">
+                       <li>24/7 emergency hotline</li>
                        <li>Quality monitoring</li>
                        <li>Employer mediation</li>
                        <li>Long-term support (2 years)</li>
-                       <li>Professional development</li>
                    </ul>
                </div>
            </div>
@@ -1431,7 +1803,7 @@
                        </div>
                        <div>
                            <h4>Phone</h4>
-                           <a href="tel:+491626151832">+49 162 6151832</a>
+                           <a href="tel:+5581911163133">+55 81 9111-6313</a>
                            <p>Speak directly with our specialists</p>
                        </div>
                    </div>
@@ -1445,11 +1817,20 @@
                            <p>Detailed inquiries and documents</p>
                        </div>
                    </div>
+                   <div class="contact-item">
+                       <div class="contact-icon">
+                           <div class="icon icon-clock"></div>
+                       </div>
+                       <div>
+                           <h4>Hours</h4>
+                           <p>Monday - Friday: 9:00 AM - 6:00 PM (CET)<br>Emergency support available 24/7</p>
+                       </div>
+                   </div>
                </div>
                <div class="contact-form">
                    <h3>Application Form</h3>
                    <form>
-                       <div class="form-group">
+<div class="form-group">
                            <label>I am a</label>
                            <select>
                                <option>Healthcare Professional</option>
@@ -1520,16 +1901,35 @@
                    <p>Your trusted partner for medical career advancement in Germany. Connecting Brazilian healthcare professionals with leading German institutions.</p>
                </div>
                <div class="footer-section">
+                   <h3>Services</h3>
+                   <a href="#services">Career Placement</a>
+                   <a href="#services">Legal Support</a>
+                   <a href="#services">Language Training</a>
+                   <a href="#services">Integration</a>
+                   <a href="#services">Relocation</a>
+               </div>
+               <div class="footer-section">
+                   <h3>Specializations</h3>
+                   <a href="#specializations">Internal Medicine</a>
+                   <a href="#specializations">Surgery</a>
+                   <a href="#specializations">Nursing</a>
+                   <a href="#specializations">Emergency Medicine</a>
+                   <a href="#specializations">Pediatrics</a>
+               </div>
+               <div class="footer-section">
                    <h3>Contact</h3>
-                   <p>+49 162 6151832</p>
+                   <p>+55 81 9111-6313</p>
                    <p>info@healthstaff-finders.de</p>
+                   <p>Mon-Fri 9:00-18:00 CET</p>
+                   <p>24/7 Emergency Support</p>
                </div>
            </div>
            <div class="footer-bottom">
                <p>&copy; 2025 HFS Healthcare Staffing Solutions. All rights reserved.</p>
                <div class="footer-legal">
-                   <a href="privacy-policy.html">Privacy Policy</a>
-                   <a href="imprint.html">Imprint</a>
+                   <a href="#privacy" onclick="showPrivacyPolicy()">Privacy Policy</a>
+                   <a href="#imprint" onclick="showImprint()">Imprint</a>
+                   <a href="#terms" onclick="showTerms()">Terms of Service</a>
                </div>
            </div>
        </div>
@@ -1552,6 +1952,8 @@
            localStorage.setItem('cookieConsent', 'accepted');
            localStorage.setItem('cookiePreferences', 'all');
            hideCookieBanner();
+           
+           // Enable analytics and tracking cookies here
            console.log('Analytics cookies enabled');
        }
 
@@ -1559,12 +1961,122 @@
            localStorage.setItem('cookieConsent', 'declined');
            localStorage.setItem('cookiePreferences', 'essential');
            hideCookieBanner();
+           
+           // Only essential cookies
            console.log('Only essential cookies enabled');
        }
 
        function hideCookieBanner() {
            const banner = document.getElementById('cookieBanner');
            banner.classList.remove('show');
+       }
+
+       // Legal Pages Functions
+       function showPrivacyPolicy() {
+           alert(`Privacy Policy
+
+HFS Healthcare Staffing Solutions
+
+Data Controller:
+HFS Healthcare Staffing Solutions
+Email: info@healthstaff-finders.de
+Phone: +55 81 9111-6313
+
+Data We Collect:
+- Contact information (name, email, phone)
+- Professional qualifications and experience
+- Application data and documents
+- Website usage data (with consent)
+
+Purpose of Processing:
+- Recruitment and placement services
+- Communication and support
+- Service improvement
+- Legal compliance
+
+Your Rights:
+- Access to your personal data
+- Rectification of inaccurate data
+- Erasure of data
+- Data portability
+- Objection to processing
+
+Cookies:
+We use essential cookies for website functionality and analytics cookies (with your consent) to improve our services.
+
+Contact our Data Protection Officer at: privacy@healthstaff-finders.de
+
+This is a simplified version. For the complete privacy policy, please contact us.`);
+       }
+
+       function showImprint() {
+           alert(`Imprint (Impressum)
+
+According to §5 TMG (Telemediengesetz):
+
+HFS Healthcare Staffing Solutions
+
+Responsible for content:
+[Company Name]
+[Address]
+[City, Postal Code]
+Germany
+
+Contact:
+Phone: +55 81 9111-6313
+Email: info@healthstaff-finders.de
+Website: www.healthstaff-finders.de
+
+Commercial Register:
+[Registration details would go here]
+
+VAT ID: [VAT number]
+
+Professional Liability Insurance:
+[Insurance details]
+
+Responsible for content according to §18 Abs. 2 MStV:
+[Name and address]
+
+Disclaimer:
+Despite careful content control, we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.
+
+Online Dispute Resolution:
+Platform of the European Commission for online dispute resolution: https://ec.europa.eu/consumers/odr/`);
+       }
+
+       function showTerms() {
+           alert(`Terms of Service
+
+HFS Healthcare Staffing Solutions
+
+1. Services
+We provide healthcare recruitment and placement services for medical professionals seeking employment in Germany.
+
+2. Application Process
+- All information provided must be accurate and complete
+- We reserve the right to verify all credentials
+- Application does not guarantee placement
+
+3. Fees and Payments
+- Our services are provided free of charge to candidates
+- Employer fees apply as per separate agreements
+
+4. Confidentiality
+- All personal and professional information is treated confidentially
+- Data is processed according to our Privacy Policy
+
+5. Liability
+- We provide services with due care and attention
+- Liability is limited to the extent permitted by law
+
+6. Termination
+- Either party may terminate the service agreement with reasonable notice
+
+7. Governing Law
+These terms are governed by German law.
+
+For complete terms and conditions, please contact us at: legal@healthstaff-finders.de`);
        }
 
        // Smooth scrolling
@@ -1601,15 +2113,20 @@
 
        // Success Stories Tabs
        function showStories(category) {
+           // Hide all story grids
            document.querySelectorAll('.stories-grid').forEach(grid => {
                grid.style.display = 'none';
            });
            
+           // Remove active class from all tabs
            document.querySelectorAll('.tab-button').forEach(tab => {
                tab.classList.remove('active');
            });
            
+           // Show selected category
            document.getElementById(`stories-${category}`).style.display = 'grid';
+           
+           // Add active class to clicked tab
            event.target.classList.add('active');
        }
 
@@ -1660,6 +2177,7 @@
                }
            });
        }, observerOptions);
+
        // Observe elements for animation
        document.querySelectorAll('.feature-card, .spec-item, .process-step, .story-card').forEach(el => {
            el.style.opacity = '0';
