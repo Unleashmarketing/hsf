@@ -1483,11 +1483,12 @@ footer {
    .specializations-info {
        padding: 0 16px;
        border-radius: 12px;
+       position: static;
    }
 
    .specializations-info-image {
        width: calc(100% + 32px);
-       height: 280px;
+       height: 220px;
        margin: 0 -16px 16px -16px;
    }
 
@@ -1878,6 +1879,7 @@ footer {
 
    .specializations-info {
        padding: 40px;
+       position: static;
    }
 
    .specializations-info-image {
