@@ -1487,13 +1487,13 @@ footer {
 
    .specializations-info-image {
        width: calc(100% + 32px);
-       height: 220px;
+       height: 280px;
        margin: 0 -16px 16px -16px;
    }
 
    .specializations-info-image img {
        width: 100%;
-       height: 100%;
+       height: 250%;
        object-fit: cover;
        object-position: top; /* ÄNDERUNG: Zeigt oberen Teil des Bildes */
        filter: brightness(0.8) saturate(1.1);
