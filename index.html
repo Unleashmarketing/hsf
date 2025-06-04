@@ -2981,6 +2981,13 @@
            }
            lastTouchEnd = now;
        }, false);
+
+    function toggleMobileMenu() {
+        const navLinks = document.getElementById("navLinks");
+        const menuBtn = document.querySelector(".mobile-menu-btn");
+        navLinks.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+    }
    </script>
 </body>
 </html>
