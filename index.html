@@ -143,178 +143,6 @@
             position: relative;
         }
 
-        .icon-document {
-            border: 2px solid currentColor;
-            border-radius: 3px;
-            position: relative;
-        }
-
-        .icon-document::before {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 2px;
-            background: currentColor;
-            top: 5px;
-            left: 4px;
-            border-radius: 1px;
-        }
-
-        .icon-document::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 2px;
-            background: currentColor;
-            top: 10px;
-            left: 4px;
-            border-radius: 1px;
-        }
-
-        /* Flag Icon for Language & Training */
-        .icon-flag {
-            width: 18px;
-            height: 12px;
-            border: 2px solid currentColor;
-            border-left: none;
-            position: relative;
-        }
-
-        .icon-flag::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 24px;
-            background: currentColor;
-            left: -4px;
-            top: -6px;
-        }
-
-        .icon-flag::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 1px;
-            background: currentColor;
-            top: 3px;
-            left: 2px;
-        }
-
-        /* Handshake Icon for Relocation & Integration */
-        .icon-handshake {
-            position: relative;
-        }
-
-        .icon-handshake::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 6px;
-            border: 2px solid currentColor;
-            border-radius: 12px 12px 0 0;
-            top: 8px;
-            left: 2px;
-        }
-
-        .icon-handshake::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 12px;
-            border: 2px solid currentColor;
-            border-radius: 0 12px 12px 0;
-            top: 2px;
-            right: 2px;
-        }
-
-        /* Plane Icon for Travel & Logistics */
-        .icon-plane {
-            position: relative;
-        }
-
-        .icon-plane::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 5px solid currentColor;
-            top: 8px;
-            left: 4px;
-            transform: rotate(-45deg);
-        }
-
-        .icon-plane::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 2px;
-            background: currentColor;
-            top: 14px;
-            left: 10px;
-            border-radius: 1px;
-        }
-
-        /* Briefcase Icon for Career Support */
-        .icon-briefcase {
-            width: 18px;
-            height: 12px;
-            border: 2px solid currentColor;
-            border-radius: 2px;
-            position: relative;
-            top: 6px;
-        }
-
-        .icon-briefcase::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 4px;
-            border: 2px solid currentColor;
-            border-bottom: none;
-            border-radius: 2px 2px 0 0;
-            top: -6px;
-            left: 3px;
-        }
-
-        .icon-briefcase::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 1px;
-            background: currentColor;
-            top: 3px;
-            left: 4px;
-        }
-
-        /* Shield Icon with centered checkmark */
-        .icon-shield {
-            position: relative;
-        }
-
-        .icon-shield::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 20px;
-            border: 2px solid currentColor;
-            border-radius: 8px 8px 16px 16px;
-            top: 2px;
-            left: 4px;
-        }
-
-        .icon-shield::after {
-            content: '✓';
-            position: absolute;
-            font-size: 12px;
-            font-weight: bold;
-            top: 9px;
-            left: 9px;
-            color: currentColor;
-            transform: translateX(-50%);
-        }
-
         .icon-home {
             width: 0;
             height: 0;
@@ -1485,7 +1313,7 @@
            <div class="features-grid">
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-document"></div>
+                       <img src="icons/document-icon.svg" alt="Administrative Support">
                    </div>
                    <h3>Legal & Administrative Support</h3>
                    <p>Complete bureaucratic assistance ensuring smooth transition and full compliance with German healthcare regulations.</p>
@@ -1498,7 +1326,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-flag"></div>
+                       <img src="icons/book-icon.svg" alt="Language Training">
                    </div>
                    <h3>Language & Training</h3>
                    <p>Specialized German language preparation focused on medical terminology and patient communication.</p>
@@ -1511,7 +1339,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-handshake"></div>
+                      <img src="icons/house-icon.svg" alt="Integration Support">
                    </div>
                    <h3>Relocation & Integration</h3>
                    <p>Complete support for your move to Germany, ensuring a smooth transition to your new life.</p>
@@ -1524,7 +1352,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-plane"></div>
+                      <img src="icons/plane-icon.svg" alt="Travel Support">
                    </div>
                    <h3>Travel & Logistics</h3>
                    <p>Organized relocation logistics from flight arrangements to settlement support.</p>
@@ -1537,7 +1365,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-briefcase"></div>
+                      <img src="icons/Case-icon.svg" alt="Career Support">
                    </div>
                    <h3>Career Support</h3>
                    <p>Continuous support for career development and professional growth in Germany.</p>
@@ -1550,7 +1378,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-shield"></div>
+                       <img src="icons/shield-icon.svg" After Care">
                    </div>
                    <h3>Quality Assurance & After-care</h3>
                    <p>Comprehensive quality control and long-term support for sustainable success.</p>
@@ -1708,7 +1536,7 @@
                <div class="stories-grid" id="stories-professionals">
                    <div class="story-card">
                        <div class="story-quote">
-                           "HFS transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at one of Germany's leading cardiac centers."
+                           "HSF transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at one of Germany's leading cardiac centers."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">MS</div>
@@ -1738,7 +1566,7 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "The transition was seamless thanks to HFS. From language preparation to integration - everything was perfectly organized. My family feels at home here."
+                           "The transition was seamless thanks to HSF From language preparation to integration - everything was perfectly organized. My family feels at home here."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">CS</div>
@@ -1755,7 +1583,7 @@
                <div class="stories-grid" id="stories-employers" style="display: none;">
                    <div class="story-card">
                        <div class="story-quote">
-                           "HFS consistently provides excellent healthcare professionals who are well-prepared and ready to contribute immediately to our medical team."
+                           "HSF consistently provides excellent healthcare professionals who are well-prepared and ready to contribute immediately to our medical team."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">KW</div>
@@ -1770,7 +1598,7 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "The collaboration with HFS has effectively solved our staff shortage. The recruited professionals are highly qualified and motivated."
+                           "The collaboration with HSF has effectively solved our staff shortage. The recruited professionals are highly qualified and motivated."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">SM</div>
@@ -1785,7 +1613,7 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "HFS understands our requirements perfectly. The service is professional and the results exceed our expectations."
+                           "HSF understands our requirements perfectly. The service is professional and the results exceed our expectations."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">MB</div>
@@ -1817,7 +1645,7 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "The family support was exceptional. From school enrollment to cultural activities - HFS thought of everything."
+                           "The family support was exceptional. From school enrollment to cultural activities - HSF thought of everything."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">RF</div>
@@ -1832,7 +1660,7 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "Germany feels like a new home thanks to HFS. The continuous support was crucial for our success."
+                           "Germany feels like a new home thanks to HSF The continuous support was crucial for our success."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">TS</div>
