@@ -1876,12 +1876,20 @@
            <a href="#home" class="logo">
                <img src="Health Staff Finders Logo_.png" alt="HSF Health Staff Finders Logo">
            </a>
-           <ul class="nav-links">
-               <li><a href="#home">Home</a></li>
-               <li><a href="#services">Services</a></li>
-               <li><a href="#specializations">Expertise</a></li>
-               <li><a href="#process-section">Process</a></li>
-               <li><a href="#contact" class="nav-cta">Get Started</a></li>
+           
+           <!-- Mobile Menu Button -->
+           <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+               <span></span>
+               <span></span>
+               <span></span>
+           </button>
+
+           <ul class="nav-links" id="navLinks">
+               <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+               <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+               <li><a href="#specializations" onclick="closeMobileMenu()">Expertise</a></li>
+               <li><a href="#process-section" onclick="closeMobileMenu()">Process</a></li>
+               <li><a href="#contact" class="nav-cta" onclick="closeMobileMenu()">Get Started</a></li>
            </ul>
        </nav>
    </header>
@@ -1932,7 +1940,7 @@
            <div class="features-grid">
                <div class="feature-card">
                    <div class="feature-icon">
-                       <img src="icons/notebook-text.svg" alt="Administrative Support">
+                       📋
                    </div>
                    <h3>Legal & Administrative Support</h3>
                    <p>Complete bureaucratic assistance ensuring smooth transition and full compliance with German healthcare regulations.</p>
@@ -1945,7 +1953,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <img src="icons/book-a.svg" alt="Language Training">
+                       📚
                    </div>
                    <h3>Language & Training</h3>
                    <p>Specialized German language preparation focused on medical terminology and patient communication.</p>
@@ -1958,7 +1966,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                      <img src="icons/house.svg" alt="Integration Support">
+                      🏠
                    </div>
                    <h3>Relocation & Integration</h3>
                    <p>Complete support for your move to Germany, ensuring a smooth transition to your new life.</p>
@@ -1971,7 +1979,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                      <img src="icons/plane.svg" alt="Travel Support">
+                      ✈️
                    </div>
                    <h3>Travel & Logistics</h3>
                    <p>Organized relocation logistics from flight arrangements to settlement support.</p>
@@ -1984,7 +1992,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                      <img src="icons/briefcase (1).svg" alt="Career Support">
+                      💼
                    </div>
                    <h3>Career Support</h3>
                    <p>Continuous support for career development and professional growth in Germany.</p>
@@ -1997,7 +2005,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <img src="icons/shield-check.svg" alt="After Care">
+                       🛡️
                    </div>
                    <h3>Quality Assurance & After-care</h3>
                    <p>Comprehensive quality control and long-term support for sustainable success.</p>
@@ -2040,9 +2048,18 @@
                        <div class="spec-stat">
                            <h4>95%</h4>
                            <p>Placement Success</p>
-                       </div>
+                           </div>
                    </div>
                </div>
+               
+               <!-- Mobile Specializations Navigation -->
+               <div class="specializations-mobile-nav">
+                   <button class="spec-nav-btn active" onclick="showSpecCategory('medical')">Medical</button>
+                   <button class="spec-nav-btn" onclick="showSpecCategory('surgical')">Surgical</button>
+                   <button class="spec-nav-btn" onclick="showSpecCategory('specialized')">Specialized</button>
+               </div>
+
+               <!-- Desktop List -->
                <div class="specializations-list">
                    <div class="spec-item">
                        <h4>Internal Medicine</h4>
@@ -2085,6 +2102,56 @@
                        <p>Adult psychiatry, child psychiatry, forensic psychiatry</p>
                    </div>
                </div>
+
+               <!-- Mobile Grids -->
+               <div class="spec-mobile-grid" id="spec-medical">
+                   <div class="spec-item">
+                       <h4>Internal Medicine</h4>
+                       <p>General internal medicine, gastroenterology</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Cardiology</h4>
+                       <p>Interventional cardiology, electrophysiology</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Neurology</h4>
+                       <p>Clinical neurology, stroke medicine</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Pediatrics</h4>
+                       <p>General pediatrics, neonatology</p>
+                   </div>
+               </div>
+
+               <div class="spec-mobile-grid" id="spec-surgical">
+                   <div class="spec-item">
+                       <h4>Surgery</h4>
+                       <p>General surgery, orthopedic surgery</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Emergency Medicine</h4>
+                       <p>Emergency physicians, trauma medicine</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Anesthesiology</h4>
+                       <p>General anesthesia, pain management</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Nursing</h4>
+                       <p>ICU nursing, surgical nursing</p>
+                   </div>
+               </div>
+
+               <div class="spec-mobile-grid" id="spec-specialized">
+                   <div class="spec-item">
+                       <h4>Radiology</h4>
+                       <p>Diagnostic radiology, interventional</p>
+                   </div>
+                   <div class="spec-item">
+                       <h4>Psychiatry</h4>
+                       <p>Adult psychiatry, child psychiatry</p>
+                   </div>
+               </div>
            </div>
        </div>
    </section>
@@ -2097,6 +2164,7 @@
                <p>Our structured 6-step process ensures successful placement and seamless integration.</p>
            </div>
            <div class="process-timeline">
+               <!-- Desktop Grid -->
                <div class="process-grid">
                    <div class="process-step">
                        <div class="step-number">1</div>
@@ -2133,6 +2201,81 @@
                        <h3>Integration Support</h3>
                        <p>Complete relocation support including accommodation, workplace orientation, and ongoing assistance during first months.</p>
                        <div class="process-duration">Duration: Ongoing</div>
+                   </div>
+               </div>
+
+               <!-- Mobile Accordion -->
+               <div class="process-mobile-accordion">
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">1</div>
+                           <div class="process-accordion-title">Application Review</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Submit your medical qualifications and career preferences. We conduct thorough evaluation and assess compatibility with German standards.</p>
+                           <div class="process-accordion-duration">Duration: 1-2 weeks</div>
+                       </div>
+                   </div>
+
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">2</div>
+                           <div class="process-accordion-title">Professional Assessment</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Comprehensive interviews in Portuguese, English, and German. We evaluate medical knowledge and cultural adaptability.</p>
+                           <div class="process-accordion-duration">Duration: 2-3 weeks</div>
+                       </div>
+                   </div>
+
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">3</div>
+                           <div class="process-accordion-title">Language Certification</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Intensive German training to achieve B2/C1 certification with focus on medical terminology and patient communication.</p>
+                           <div class="process-accordion-duration">Duration: 6-12 months</div>
+                       </div>
+                   </div>
+
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">4</div>
+                           <div class="process-accordion-title">License Recognition</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Guidance through the Approbation process - official recognition of medical qualifications by German authorities.</p>
+                           <div class="process-accordion-duration">Duration: 3-6 months</div>
+                       </div>
+                   </div>
+
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">5</div>
+                           <div class="process-accordion-title">Job Placement</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Matching with healthcare institutions based on specialty and preferences. Interview facilitation and contract negotiation.</p>
+                           <div class="process-accordion-duration">Duration: 2-4 weeks</div>
+                       </div>
+                   </div>
+
+                   <div class="process-accordion-item">
+                       <button class="process-accordion-header" onclick="toggleAccordion(this)">
+                           <div class="process-accordion-number">6</div>
+                           <div class="process-accordion-title">Integration Support</div>
+                           <div class="process-accordion-icon">+</div>
+                       </button>
+                       <div class="process-accordion-content">
+                           <p>Complete relocation support including accommodation, workplace orientation, and ongoing assistance during first months.</p>
+                           <div class="process-accordion-duration">Duration: Ongoing</div>
+                       </div>
                    </div>
                </div>
            </div>
@@ -2330,7 +2473,7 @@
                </div>
                <div class="contact-form">
                    <h3>Application Form</h3>
-                   <form>
+                   <form onsubmit="handleFormSubmit(event)">
                        <div class="form-group">
                            <label>I am a</label>
                            <select>
@@ -2343,21 +2486,21 @@
                        <div class="form-row">
                            <div class="form-group">
                                <label>Full Name</label>
-                               <input type="text" placeholder="Dr./Nurse [Your Name]">
+                               <input type="text" placeholder="Dr./Nurse [Your Name]" required>
                            </div>
                            <div class="form-group">
                                <label>Email</label>
-                               <input type="email" placeholder="your.email@example.com">
+                               <input type="email" placeholder="your.email@example.com" required>
                            </div>
                        </div>
                        <div class="form-row">
                            <div class="form-group">
                                <label>Phone</label>
-                               <input type="tel" placeholder="+55 11 99999-9999">
+                               <input type="tel" placeholder="+55 11 99999-9999" required>
                            </div>
                            <div class="form-group">
                                <label>Specialty</label>
-                               <input type="text" placeholder="e.g., Cardiology, Nursing">
+                               <input type="text" placeholder="e.g., Cardiology, Nursing" required>
                            </div>
                        </div>
                        <div class="form-row">
@@ -2465,43 +2608,227 @@
            banner.classList.remove('show');
        }
 
-       // Smooth scrolling
+       // Mobile Menu Functions
+       function toggleMobileMenu() {
+           const navLinks = document.getElementById('navLinks');
+           const mobileBtn = document.querySelector('.mobile-menu-btn');
+           
+           navLinks.classList.toggle('active');
+           mobileBtn.classList.toggle('active');
+           
+           // Prevent body scroll when menu is open
+           if (navLinks.classList.contains('active')) {
+               document.body.style.overflow = 'hidden';
+           } else {
+               document.body.style.overflow = '';
+           }
+       }
+
+       function closeMobileMenu() {
+           const navLinks = document.getElementById('navLinks');
+           const mobileBtn = document.querySelector('.mobile-menu-btn');
+           
+           navLinks.classList.remove('active');
+           mobileBtn.classList.remove('active');
+           document.body.style.overflow = '';
+       }
+
+       // Close mobile menu when clicking outside
+       document.addEventListener('click', function(e) {
+           const navLinks = document.getElementById('navLinks');
+           const mobileBtn = document.querySelector('.mobile-menu-btn');
+           const nav = document.querySelector('nav');
+           
+           if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+               closeMobileMenu();
+           }
+       });
+
+       // Close mobile menu on window resize
+       window.addEventListener('resize', function() {
+           if (window.innerWidth > 768) {
+               closeMobileMenu();
+           }
+       });
+
+       // Mobile layout functions
+       function showSpecCategory(category) {
+           // Hide all mobile grids
+           document.querySelectorAll('.spec-mobile-grid').forEach(grid => {
+               grid.style.display = 'none';
+           });
+           
+           // Remove active class from all nav buttons
+           document.querySelectorAll('.spec-nav-btn').forEach(btn => {
+               btn.classList.remove('active');
+           });
+           
+           // Show selected category
+           document.getElementById(`spec-${category}`).style.display = 'grid';
+           
+           // Add active class to clicked button
+           event.target.classList.add('active');
+       }
+
+       // Accordion functionality
+       function toggleAccordion(button) {
+           const content = button.nextElementSibling;
+           const icon = button.querySelector('.process-accordion-icon');
+           const isActive = content.classList.contains('active');
+           
+           // Close all accordions
+           document.querySelectorAll('.process-accordion-content').forEach(item => {
+               item.classList.remove('active');
+           });
+           
+           document.querySelectorAll('.process-accordion-icon').forEach(icon => {
+               icon.textContent = '+';
+               icon.style.transform = 'rotate(0deg)';
+           });
+           
+           // Open clicked accordion if it wasn't active
+           if (!isActive) {
+               content.classList.add('active');
+               icon.textContent = '−';
+               icon.style.transform = 'rotate(180deg)';
+           }
+       }
+
+       // Responsive layout switching
+       function handleResponsiveLayout() {
+           const isMobile = window.innerWidth <= 768;
+           
+           // Specializations
+           const specNav = document.querySelector('.specializations-mobile-nav');
+           const specList = document.querySelector('.specializations-list');
+           const specMobileGrids = document.querySelectorAll('.spec-mobile-grid');
+           
+           if (isMobile) {
+               specNav.style.display = 'flex';
+               specList.style.display = 'none';
+               // Show first category by default
+               document.getElementById('spec-medical').style.display = 'grid';
+           } else {
+               specNav.style.display = 'none';
+               specList.style.display = 'grid';
+               specMobileGrids.forEach(grid => grid.style.display = 'none');
+           }
+           
+           // Process
+           const processGrid = document.querySelector('.process-grid');
+           const processAccordion = document.querySelector('.process-mobile-accordion');
+           
+           if (isMobile) {
+               processGrid.style.display = 'none';
+               processAccordion.style.display = 'block';
+           } else {
+               processGrid.style.display = 'grid';
+               processAccordion.style.display = 'none';
+           }
+       }
+
+       // Feature card interaction for mobile
+       function handleFeatureCardClick(card) {
+           if (window.innerWidth <= 768) {
+               const list = card.querySelector('.feature-list');
+               const isExpanded = card.classList.contains('expanded');
+               
+               if (isExpanded) {
+                   card.classList.remove('expanded');
+                   list.style.display = 'none';
+               } else {
+                   // Close other expanded cards
+                   document.querySelectorAll('.feature-card.expanded').forEach(c => {
+                       c.classList.remove('expanded');
+                       c.querySelector('.feature-list').style.display = 'none';
+                   });
+                   
+                   card.classList.add('expanded');
+                   list.style.display = 'block';
+               }
+           }
+       }
+
+       // Smooth scrolling with mobile menu consideration
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
            anchor.addEventListener('click', function (e) {
                e.preventDefault();
                const target = document.querySelector(this.getAttribute('href'));
                if (target) {
-                   target.scrollIntoView({
-                       behavior: 'smooth',
-                       block: 'start'
-                   });
+                   // Close mobile menu if open
+                   closeMobileMenu();
+                   
+                   // Wait for menu to close before scrolling
+                   setTimeout(() => {
+                       target.scrollIntoView({
+                           behavior: 'smooth',
+                           block: 'start'
+                       });
+                   }, 100);
                }
            });
        });
 
        // Header scroll effect
+       let lastScrollY = window.scrollY;
+       
        window.addEventListener('scroll', () => {
            const header = document.querySelector('header');
-           if (window.scrollY > 50) {
-               header.style.background = 'rgba(255, 255, 255, 0.9)';
+           const currentScrollY = window.scrollY;
+           
+           // Change header background on scroll
+           if (currentScrollY > 50) {
+               header.style.background = 'rgba(255, 255, 255, 0.95)';
                header.style.backdropFilter = 'saturate(180%) blur(20px)';
            } else {
                header.style.background = 'rgba(255, 255, 255, 0.8)';
                header.style.backdropFilter = 'saturate(180%) blur(20px)';
            }
+
+           // Hide header on scroll down, show on scroll up (mobile)
+           if (window.innerWidth <= 768) {
+               if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                   header.style.transform = 'translateY(-100%)';
+               } else {
+                   header.style.transform = 'translateY(0)';
+               }
+           }
+           
+           lastScrollY = currentScrollY;
        });
 
-       // Form submission
-       document.querySelector('form').addEventListener('submit', function(e) {
+       // Form submission with better UX
+       function handleFormSubmit(e) {
            e.preventDefault();
-           alert('Thank you for your application! Our team will contact you within 24 hours.');
-       });
+           
+           const submitBtn = e.target.querySelector('button[type="submit"]');
+           const originalText = submitBtn.textContent;
+           
+           // Show loading state
+           submitBtn.textContent = 'Sending...';
+           submitBtn.disabled = true;
+           
+           // Simulate form submission
+           setTimeout(() => {
+               alert('Thank you for your application! Our team will contact you within 24 hours.');
+               
+               // Reset form
+               e.target.reset();
+               
+               // Reset button
+               submitBtn.textContent = originalText;
+               submitBtn.disabled = false;
+           }, 1500);
+       }
 
-       // Success Stories Tabs
+       // Success Stories Tabs with improved UX
        function showStories(category) {
-           // Hide all story grids
+           // Hide all story grids with fade effect
            document.querySelectorAll('.stories-grid').forEach(grid => {
-               grid.style.display = 'none';
+               grid.style.opacity = '0';
+               setTimeout(() => {
+                   grid.style.display = 'none';
+               }, 200);
            });
            
            // Remove active class from all tabs
@@ -2509,14 +2836,20 @@
                tab.classList.remove('active');
            });
            
-           // Show selected category
-           document.getElementById(`stories-${category}`).style.display = 'grid';
+           // Show selected category with fade effect
+           setTimeout(() => {
+               const selectedGrid = document.getElementById(`stories-${category}`);
+               selectedGrid.style.display = 'grid';
+               setTimeout(() => {
+                   selectedGrid.style.opacity = '1';
+               }, 50);
+           }, 200);
            
            // Add active class to clicked tab
            event.target.classList.add('active');
        }
 
-       // Animate hero stats
+       // Animate hero stats with intersection observer
        function animateNumbers() {
            const stats = document.querySelectorAll('.hero-stat h3');
            stats.forEach(stat => {
@@ -2537,7 +2870,13 @@
            });
        }
 
-       // Observe hero stats
+       // Intersection observer for animations
+       const observerOptions = {
+           threshold: 0.1,
+           rootMargin: '0px 0px -50px 0px'
+       };
+
+       // Observe hero stats for number animation
        const heroObserver = new IntersectionObserver((entries) => {
            entries.forEach(entry => {
                if (entry.isIntersecting) {
@@ -2545,17 +2884,10 @@
                    heroObserver.unobserve(entry.target);
                }
            });
-       });
+       }, observerOptions);
 
-       heroObserver.observe(document.querySelector('.hero-stats'));
-
-       // Add fade-in animation on scroll
-       const observerOptions = {
-           threshold: 0.1,
-           rootMargin: '0px 0px -50px 0px'
-       };
-
-       const observer = new IntersectionObserver((entries) => {
+       // Observe elements for fade-in animation
+       const fadeObserver = new IntersectionObserver((entries) => {
            entries.forEach(entry => {
                if (entry.isIntersecting) {
                    entry.target.style.opacity = '1';
@@ -2564,18 +2896,89 @@
            });
        }, observerOptions);
 
-       // Observe elements for animation
-       document.querySelectorAll('.feature-card, .spec-item, .process-step, .story-card').forEach(el => {
-           el.style.opacity = '0';
-           el.style.transform = 'translateY(30px)';
-           el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-           observer.observe(el);
+       // Initialize observers when DOM is loaded
+       document.addEventListener('DOMContentLoaded', function() {
+           // Show cookie banner
+           showCookieBanner();
+           
+           // Initialize responsive layout
+           handleResponsiveLayout();
+           
+           // Add resize listener
+           window.addEventListener('resize', debounce(handleResponsiveLayout, 250));
+           
+           // Add click listeners to feature cards for mobile
+           document.querySelectorAll('.feature-card').forEach(card => {
+               card.addEventListener('click', () => handleFeatureCardClick(card));
+           });
+           
+           // Observe hero stats
+           const heroStats = document.querySelector('.hero-stats');
+           if (heroStats) {
+               heroObserver.observe(heroStats);
+           }
+           
+           // Observe elements for animation
+           document.querySelectorAll('.feature-card, .spec-item, .process-step, .story-card').forEach(el => {
+               el.style.opacity = '0';
+               el.style.transform = 'translateY(30px)';
+               el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+               fadeObserver.observe(el);
+           });
+           
+           // Add loading states to all buttons
+           document.querySelectorAll('.btn').forEach(btn => {
+               btn.addEventListener('click', function() {
+                   if (this.href && this.href.includes('#')) return; // Skip anchor links
+                   
+                   this.style.transform = 'scale(0.98)';
+                   setTimeout(() => {
+                       this.style.transform = '';
+                   }, 150);
+               });
+           });
        });
 
-       // Initialize cookie banner on page load
-       document.addEventListener('DOMContentLoaded', function() {
-           showCookieBanner();
-       });
+       // Performance optimization: Debounce scroll events
+       function debounce(func, wait) {
+           let timeout;
+           return function executedFunction(...args) {
+               const later = () => {
+                   clearTimeout(timeout);
+                   func(...args);
+               };
+               clearTimeout(timeout);
+               timeout = setTimeout(later, wait);
+           };
+       }
+
+       // Touch optimization for mobile
+       if ('ontouchstart' in window) {
+           document.body.classList.add('touch-device');
+           
+           // Add touch feedback to interactive elements
+           document.querySelectorAll('.btn, .feature-card, .spec-item, .process-step, .story-card').forEach(el => {
+               el.addEventListener('touchstart', function() {
+                   this.style.transform = 'scale(0.98)';
+               });
+               
+               el.addEventListener('touchend', function() {
+                   setTimeout(() => {
+                       this.style.transform = '';
+                   }, 150);
+               });
+           });
+       }
+
+       // Prevent zoom on double tap for better UX
+       let lastTouchEnd = 0;
+       document.addEventListener('touchend', function (event) {
+           const now = (new Date()).getTime();
+           if (now - lastTouchEnd <= 300) {
+               event.preventDefault();
+           }
+           lastTouchEnd = now;
+       }, false);
    </script>
 </body>
 </html>
