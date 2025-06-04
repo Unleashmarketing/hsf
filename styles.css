@@ -1299,10 +1299,10 @@ footer {
        font-size: 16px;
        line-height: 1.3;
        margin-bottom: 20px;
-       display: -webkit-box;
-       -webkit-line-clamp: 3;
-       -webkit-box-orient: vertical;
-       overflow: hidden;
+       display: block;
+       -webkit-line-clamp: unset;
+       -webkit-box-orient: unset;
+       overflow: visible;
    }
 
    /* Compact hero features */
@@ -1381,10 +1381,10 @@ footer {
    .section-header p {
        font-size: 15px;
        line-height: 1.3;
-       display: -webkit-box;
-       -webkit-line-clamp: 3;
-       -webkit-box-orient: vertical;
-       overflow: hidden;
+        display: block;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: unset;
+        overflow: visible;
    }
 
    /* Compact Features Mobile */
@@ -1423,10 +1423,10 @@ footer {
    .feature-card p {
        font-size: 14px;
        margin: 0 16px 12px;
-       display: -webkit-box;
-       -webkit-line-clamp: 2;
-       -webkit-box-orient: vertical;
-       overflow: hidden;
+        display: block;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: unset;
+        overflow: visible;
    }
 
    .feature-list {
@@ -1518,10 +1518,10 @@ footer {
 .specializations-info p {
    font-size: 14px;
    margin-bottom: 12px;
-   display: -webkit-box;
-   -webkit-line-clamp: 2;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
 }
 
 .specializations-stats {
