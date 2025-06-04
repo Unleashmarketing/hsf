@@ -135,7 +135,7 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Custom Icons - Simplified Apple Style */
+        /* Custom Icons - Updated */
         .icon {
             display: inline-block;
             width: 24px;
@@ -171,61 +171,38 @@
             border-radius: 1px;
         }
 
-        .icon-language {
+        /* Flag Icon for Language & Training */
+        .icon-flag {
+            width: 18px;
+            height: 12px;
             border: 2px solid currentColor;
-            border-radius: 50%;
+            border-left: none;
             position: relative;
         }
 
-        .icon-language::before {
+        .icon-flag::before {
             content: '';
             position: absolute;
-            width: 16px;
+            width: 2px;
+            height: 24px;
+            background: currentColor;
+            left: -4px;
+            top: -6px;
+        }
+
+        .icon-flag::after {
+            content: '';
+            position: absolute;
+            width: 8px;
             height: 1px;
             background: currentColor;
-            top: 50%;
-            left: 3px;
-            transform: translateY(-50%);
-        }
-
-        .icon-language::after {
-            content: '';
-            position: absolute;
-            width: 1px;
-            height: 16px;
-            background: currentColor;
             top: 3px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 2px;
         }
 
-        .icon-home {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid currentColor;
+        /* Handshake Icon for Relocation & Integration */
+        .icon-handshake {
             position: relative;
-        }
-
-        .icon-home::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 8px;
-            background: currentColor;
-            bottom: -18px;
-            left: -5px;
-        }
-
-        .icon-plane {
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 5px solid currentColor;
-            position: relative;
-            transform: rotate(-45deg);
         }
 
         .icon-handshake::before {
@@ -250,6 +227,72 @@
             right: 2px;
         }
 
+        /* Plane Icon for Travel & Logistics */
+        .icon-plane {
+            position: relative;
+        }
+
+        .icon-plane::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 5px solid currentColor;
+            top: 8px;
+            left: 4px;
+            transform: rotate(-45deg);
+        }
+
+        .icon-plane::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 2px;
+            background: currentColor;
+            top: 14px;
+            left: 10px;
+            border-radius: 1px;
+        }
+
+        /* Briefcase Icon for Career Support */
+        .icon-briefcase {
+            width: 18px;
+            height: 12px;
+            border: 2px solid currentColor;
+            border-radius: 2px;
+            position: relative;
+            top: 6px;
+        }
+
+        .icon-briefcase::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 4px;
+            border: 2px solid currentColor;
+            border-bottom: none;
+            border-radius: 2px 2px 0 0;
+            top: -6px;
+            left: 3px;
+        }
+
+        .icon-briefcase::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 1px;
+            background: currentColor;
+            top: 3px;
+            left: 4px;
+        }
+
+        /* Shield Icon with centered checkmark */
+        .icon-shield {
+            position: relative;
+        }
+
         .icon-shield::before {
             content: '';
             position: absolute;
@@ -266,9 +309,29 @@
             position: absolute;
             font-size: 12px;
             font-weight: bold;
-            top: 7px;
+            top: 9px;
             left: 9px;
             color: currentColor;
+            transform: translateX(-50%);
+        }
+
+        .icon-home {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid currentColor;
+            position: relative;
+        }
+
+        .icon-home::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            background: currentColor;
+            bottom: -18px;
+            left: -5px;
         }
 
         .icon-phone::before {
@@ -1435,7 +1498,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-language"></div>
+                       <div class="icon icon-flag"></div>
                    </div>
                    <h3>Language & Training</h3>
                    <p>Specialized German language preparation focused on medical terminology and patient communication.</p>
@@ -1448,7 +1511,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-home"></div>
+                       <div class="icon icon-handshake"></div>
                    </div>
                    <h3>Relocation & Integration</h3>
                    <p>Complete support for your move to Germany, ensuring a smooth transition to your new life.</p>
@@ -1474,7 +1537,7 @@
                </div>
                <div class="feature-card">
                    <div class="feature-icon">
-                       <div class="icon icon-handshake"></div>
+                       <div class="icon icon-briefcase"></div>
                    </div>
                    <h3>Career Support</h3>
                    <p>Continuous support for career development and professional growth in Germany.</p>
@@ -1645,13 +1708,21 @@
                <div class="stories-grid" id="stories-professionals">
                    <div class="story-card">
                        <div class="story-quote">
-                           "HFS transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at Munich's leading cardiac center."
+                           "HFS transformed my career aspirations into reality. The comprehensive support was exceptional. I now work as a cardiologist at one of Germany's leading cardiac centers."
                        </div>
                        <div class="story-author">
-                           <div class="author-avatar">MS</div>
+                           <div class="author-avatar">TS</div>
+                           <div class="author-info">
+                               <h4>Teresa Santos</h4>
+                               <p>Family Member</p>
+                               <div class="story-rating">
+                                   <span>★★★★★</span>
+                               </div>
+                           </div>
+                                                      <div class="author-avatar">MS</div>
                            <div class="author-info">
                                <h4>Dr. Maria Santos</h4>
-                               <p>Interventional Cardiologist, Munich</p>
+                               <p>Interventional Cardiologist</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1660,13 +1731,13 @@
                    </div>
                    <div class="story-card">
                        <div class="story-quote">
-                           "The professional guidance throughout the entire process was remarkable. Every detail was carefully managed. I'm now thriving as a pediatric nurse in Berlin."
+                           "The professional guidance throughout the entire process was remarkable. Every detail was carefully managed. I'm now thriving as a pediatric nurse in Germany."
                        </div>
                        <div class="story-author">
                            <div class="author-avatar">AR</div>
                            <div class="author-info">
                                <h4>Ana Rodriguez</h4>
-                               <p>Pediatric ICU Nurse, Berlin</p>
+                               <p>Pediatric ICU Nurse</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1681,7 +1752,7 @@
                            <div class="author-avatar">CS</div>
                            <div class="author-info">
                                <h4>Dr. Carlos Silva</h4>
-                               <p>Orthopedic Surgeon, Hamburg</p>
+                               <p>Orthopedic Surgeon</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1698,7 +1769,7 @@
                            <div class="author-avatar">KW</div>
                            <div class="author-info">
                                <h4>Dr. Klaus Weber</h4>
-                               <p>Medical Director, Frankfurt</p>
+                               <p>Medical Director</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1713,7 +1784,7 @@
                            <div class="author-avatar">SM</div>
                            <div class="author-info">
                                <h4>Sabine Müller</h4>
-                               <p>Director of Nursing, Düsseldorf</p>
+                               <p>Director of Nursing</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1728,7 +1799,7 @@
                            <div class="author-avatar">MB</div>
                            <div class="author-info">
                                <h4>Dr. Michael Braun</h4>
-                               <p>Chief of Surgery, Stuttgart</p>
+                               <p>Chief of Surgery</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1745,7 +1816,7 @@
                            <div class="author-avatar">LP</div>
                            <div class="author-info">
                                <h4>Lucia Pereira</h4>
-                               <p>Wife of Dr. João Pereira, Cologne</p>
+                               <p>Family Member</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1760,7 +1831,7 @@
                            <div class="author-avatar">RF</div>
                            <div class="author-info">
                                <h4>Roberto Fernandez</h4>
-                               <p>Family Father, Nuremberg</p>
+                               <p>Family Father</p>
                                <div class="story-rating">
                                    <span>★★★★★</span>
                                </div>
@@ -1772,14 +1843,6 @@
                            "Germany feels like a new home thanks to HFS. The continuous support was crucial for our success."
                        </div>
                        <div class="story-author">
-                           <div class="author-avatar">TS</div>
-                           <div class="author-info">
-                               <h4>Teresa Santos</h4>
-                               <p>Santos Family, Bremen</p>
-                               <div class="story-rating">
-                                   <span>★★★★★</span>
-                               </div>
-                           </div>
                        </div>
                    </div>
                </div>
