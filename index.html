@@ -143,28 +143,6 @@
             position: relative;
         }
 
-        .icon-medical::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 3px;
-            background: currentColor;
-            top: 10px;
-            left: 2px;
-            border-radius: 2px;
-        }
-
-        .icon-medical::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 20px;
-            background: currentColor;
-            top: 2px;
-            left: 10px;
-            border-radius: 2px;
-        }
-
         .icon-document {
             border: 2px solid currentColor;
             border-radius: 3px;
@@ -392,12 +370,12 @@
             font-weight: 600;
             color: #1d1d1f;
             letter-spacing: -0.01em;
+            text-decoration: none;
         }
 
-        .logo .icon-medical {
-            color: #007aff;
-            width: 24px;
-            height: 24px;
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -1174,7 +1152,7 @@
            color: rgba(255, 255, 255, 0.6);
        }
 
-       /* Footer - Apple Style */
+       /* Footer - Neues Design */
        footer {
            background: #f5f5f7;
            color: #6e6e73;
@@ -1183,7 +1161,7 @@
 
        .footer-content {
            display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+           grid-template-columns: 2fr 1fr 1fr;
            gap: 48px;
            margin-bottom: 48px;
        }
@@ -1207,6 +1185,24 @@
 
        .footer-section a:hover {
            color: #007aff;
+       }
+
+       .footer-logo {
+           display: flex;
+           align-items: center;
+           gap: 12px;
+           margin-bottom: 24px;
+       }
+
+       .footer-logo img {
+           height: 48px;
+           width: auto;
+       }
+
+       .footer-logo span {
+           font-size: 24px;
+           font-weight: 600;
+           color: #1d1d1f;
        }
 
        .footer-bottom {
@@ -1320,6 +1316,10 @@
                flex-direction: column;
                gap: 12px;
            }
+
+           .footer-content {
+               grid-template-columns: 1fr;
+           }
        }
 
        /* Animations */
@@ -1362,10 +1362,9 @@
    <!-- Header -->
    <header>
        <nav class="container">
-           <div class="logo">
-               <div class="icon icon-medical"></div>
-               HFS Healthcare
-           </div>
+           <a href="#home" class="logo">
+               <img src="https://via.placeholder.com/120x40/007AFF/FFFFFF?text=HFS+LOGO" alt="HFS Healthcare Logo">
+           </a>
            <ul class="nav-links">
                <li><a href="#home">Home</a></li>
                <li><a href="#services">Services</a></li>
@@ -1821,7 +1820,7 @@
                <div class="contact-form">
                    <h3>Application Form</h3>
                    <form>
-<div class="form-group">
+                       <div class="form-group">
                            <label>I am a</label>
                            <select>
                                <option>Healthcare Professional</option>
@@ -1888,16 +1887,11 @@
        <div class="container">
            <div class="footer-content">
                <div class="footer-section">
-                   <h3>HFS Healthcare</h3>
+                   <div class="footer-logo">
+                       <img src="https://via.placeholder.com/120x48/007AFF/FFFFFF?text=HFS+LOGO" alt="HFS Healthcare Logo">
+                       <span>HFS Healthcare</span>
+                   </div>
                    <p>Your trusted partner for medical career advancement in Germany. Connecting Brazilian healthcare professionals with leading German institutions.</p>
-               </div>
-               <div class="footer-section">
-                   <h3>Services</h3>
-                   <a href="#services">Career Placement</a>
-                   <a href="#services">Legal Support</a>
-                   <a href="#services">Language Training</a>
-                   <a href="#services">Integration</a>
-                   <a href="#services">Relocation</a>
                </div>
                <div class="footer-section">
                    <h3>Specializations</h3>
@@ -1960,7 +1954,6 @@
            banner.classList.remove('show');
        }
 
- 
        // Smooth scrolling
        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
            anchor.addEventListener('click', function (e) {
