@@ -681,63 +681,63 @@
              <div class="contact-form">
                  <h3>Application Form</h3>
                  <form action="https://formspree.io/f/xzzgzdak" method="POST" onsubmit="handleFormSubmit(event)">
-                     <div class="form-group">
-                         <label>I am a</label>
-                         <select>
-                             <option>Healthcare Professional</option>
-                             <option>Medical Institution</option>
-                             <option>Medical Student</option>
-                             <option>Healthcare Administrator</option>
-                         </select>
-                     </div>
-                     <div class="form-row">
-                         <div class="form-group">
-                             <label>Full Name</label>
-                             <input type="text" placeholder="Dr./Nurse [Your Name]" required>
-                         </div>
-                         <div class="form-group">
-                             <label>Email</label>
-                             <input type="email" placeholder="your.email@example.com" required>
-                         </div>
-                     </div>
-                     <div class="form-row">
-                         <div class="form-group">
-                             <label>Phone</label>
-                             <input type="tel" placeholder="+55 11 99999-9999" required>
-                         </div>
-                         <div class="form-group">
-                             <label>Specialty</label>
-                             <input type="text" placeholder="e.g., Cardiology, Nursing" required>
-                         </div>
-                     </div>
-                     <div class="form-row">
-                         <div class="form-group">
-                             <label>Experience</label>
-                             <select>
-                                 <option>Less than 2 years</option>
-                                 <option>2-5 years</option>
-                                 <option>5-10 years</option>
-                                 <option>10+ years</option>
-                             </select>
-                         </div>
-                         <div class="form-group">
-                             <label>German Level</label>
-                             <select>
-                                 <option>No German</option>
-                                 <option>A1 - Beginner</option>
-                                 <option>A2 - Elementary</option>
-                                 <option>B1 - Intermediate</option>
-                                 <option>B2 - Upper Intermediate</option>
-                                 <option>C1 - Advanced</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <label>Message</label>
-                         <textarea rows="4" placeholder="Tell us about your background and career goals..."></textarea>
-                     </div>
-                     <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
-                 </form>
+                    <div class="form-group">
+                        <label>I am a</label>
+                        <select name="role">
+                            <option>Healthcare Professional</option>
+                            <option>Medical Institution</option>
+                            <option>Medical Student</option>
+                            <option>Healthcare Administrator</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="fullName" placeholder="Dr./Nurse [Your Name]" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone" placeholder="+55 11 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Specialty</label>
+                            <input type="text" name="specialty" placeholder="e.g., Cardiology, Nursing" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Experience</label>
+                            <select name="experience">
+                                <option>Less than 2 years</option>
+                                <option>2-5 years</option>
+                                <option>5-10 years</option>
+                                <option>10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>German Level</label>
+                            <select name="germanLevel">
+                                <option>No German</option>
+                                <option>A1 - Beginner</option>
+                                <option>A2 - Elementary</option>
+                                <option>B1 - Intermediate</option>
+                                <option>B2 - Upper Intermediate</option>
+                                <option>C1 - Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="4" placeholder="Tell us about your background and career goals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                </form>
              </div>
          </div>
      </div>
